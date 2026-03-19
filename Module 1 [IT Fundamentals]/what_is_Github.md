@@ -6,11 +6,17 @@
 5. download git software or gitbash
 
 **Examples of github to upload folder on repository via git bash or commands**
+```
 git init
 git add .
 git commit -m '19-03-2026 all data uploaded'
-git remote add origin github repo links paste here
+git remote add origin github repo links paste here (https://github.com/dharinibodar3010/frontend-learning.git)
 git push -u origin master
 
+```
+
 **How to clone github**
-git clone 
+```
+git clone https://github.com/dharinibodar3010/frontend-learning.git
+
+```
