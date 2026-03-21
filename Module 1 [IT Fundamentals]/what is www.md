@@ -3,5 +3,4 @@
 - It allows users to access and share information online.
 
 **Example**
-
 Google is a website on the World Wide Web.
