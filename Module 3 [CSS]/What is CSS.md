@@ -24,10 +24,11 @@
 **Example:**
 - <style>
   p { color: blue; }
- </style>
+  </style>
 
 3. External CSS
 - Written in separate .css file
+
 **Example:**
 - <link rel="stylesheet" href="style.css">
 
