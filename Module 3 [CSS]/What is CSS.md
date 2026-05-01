@@ -1,9 +1,4 @@
 # What is CSS?
-1. css stands for cascading stylesheet
-2. css used to provide style on your webpage
-
-# What is cascading?
-- What is CSS?
 - CSS stands for Cascading Style Sheets
 - CSS is used to add style and design to web pages (colors, layout, fonts, spacing, etc.)
 # What is Cascading?
