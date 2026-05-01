@@ -16,6 +16,7 @@
 # Types of CSS
 1. Inline CSS
 - Written inside HTML tag
+
 **Example:**
 - <p style="color: red;">Hello</p>
 
