@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='main.css'>
+    <style>
+        /*
+next sibling combinator selector : it is used to select the element which is next sibling of another element
+syntax:
+    element1 + element2
+    {
+        property:value
+    }
+*/
+        .parent {
+            width: 80%;
+            height: auto;
+            margin: auto;
+            padding: 20px;
+            background-color: aqua;
+        }
+
+        .parent+p {
+            color: blue;
+            font-family: cursive;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa a, natus nobis aut, quia
+            minima provident, maxime ex sed rerum tempora ea perspiciatis incidunt? Recusandae nesciunt culpa libero
+            mollitia?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa a, natus nobis aut, quia
+            minima provident, maxime ex sed rerum tempora ea perspiciatis incidunt? Recusandae nesciunt culpa libero
+            mollitia?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa a, natus nobis aut, quia
+            minima provident, maxime ex sed rerum tempora ea perspiciatis incidunt? Recusandae nesciunt culpa libero
+            mollitia?</p>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa a, natus nobis aut, quia
+        minima provident, maxime ex sed rerum tempora ea perspiciatis incidunt? Recusandae nesciunt culpa libero
+        mollitia?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa a, natus nobis aut, quia
+        minima provident, maxime ex sed rerum tempora ea perspiciatis incidunt? Recusandae nesciunt culpa libero
+        mollitia?</p>
+        
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa a, natus nobis aut, quia
+        minima provident, maxime ex sed rerum tempora ea perspiciatis incidunt? Recusandae nesciunt culpa libero
+        mollitia?</p>
+</body>
+
+</html>

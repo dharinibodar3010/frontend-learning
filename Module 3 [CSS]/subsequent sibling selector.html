@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Subsequent Sibling Selector</title>
+    <style>
+        /*
+        Subsequent sibling selector : it is used to select the element which is the sibling of another element and comes after it in the same parent element
+        syntax:
+            element1 ~ element2
+            {
+                property:value
+            }
+        */
+
+        .parent {
+            width: 80%;
+            height: auto;
+            margin: auto;
+            padding: 20px;
+            background-color: aqua;
+        }
+
+        .parent~h1 {
+            color: blue;
+            font-family: cursive;
+        }
+
+        .parent~p {
+            color: blue;
+            font-family: cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla dolores distinctio fugit veniam,
+            accusamus soluta temporibus, incidunt cumque enim ab nostrum corrupti quasi optio dignissimos commodi vitae
+            perspiciatis voluptatibus!</p>
+
+
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla dolores distinctio fugit veniam,
+            accusamus soluta temporibus, incidunt cumque enim ab nostrum corrupti quasi optio dignissimos commodi vitae
+            perspiciatis voluptatibus!</p>
+
+
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla dolores distinctio fugit veniam,
+            accusamus soluta temporibus, incidunt cumque enim ab nostrum corrupti quasi optio dignissimos commodi vitae
+            perspiciatis voluptatibus!</p>
+
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla dolores distinctio fugit veniam,
+            accusamus soluta temporibus, incidunt cumque enim ab nostrum corrupti quasi optio dignissimos commodi vitae
+            perspiciatis voluptatibus!</p>
+
+    </div>
+
+    <h1>About us</h1>
+    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla dolores distinctio fugit veniam,
+        accusamus soluta temporibus, incidunt cumque enim ab nostrum corrupti quasi optio dignissimos commodi vitae
+        perspiciatis voluptatibus!</p>
+
+    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla dolores distinctio fugit veniam,
+        accusamus soluta temporibus, incidunt cumque enim ab nostrum corrupti quasi optio dignissimos commodi vitae
+        perspiciatis voluptatibus!</p>
+
+    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla dolores distinctio fugit veniam,
+        accusamus soluta temporibus, incidunt cumque enim ab nostrum corrupti quasi optio dignissimos commodi vitae
+        perspiciatis voluptatibus!</p>
+</body>
+
+</html>

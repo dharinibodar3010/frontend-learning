@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Attributes</title>
+    <style>
+        /*
+        Attribute selector : it is used to select the element based on the attribute and apply the style to it
+        syntax:
+            element[attribute]
+            {
+                property:value;
+            }
+        */
+        .app {
+            width: 30%;
+            height: auto;
+            margin: auto;
+            padding: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            height: auto;
+            padding: 8px;
+        }
+
+        input[type="submit"] {
+            width: 45%;
+            height: auto;
+            padding: 8px;
+            background-color: red;
+            border: 0;
+            color: white;
+        }
+
+        /*
+        input[placeholder]
+        {
+        color: red;
+        font-size: 20px;
+        }
+
+        */
+        ::placeholder {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <h1>Login form</h1>
+        <form>
+            <input type="text" placeholder="Enter Name *" required />
+            <br><br>
+
+            <input type="text" placeholder="Enter Name *" required />
+            <br><br>
+
+            <input type="text" placeholder="Enter Name *" required />
+            <br><br>
+
+            <input type="text" placeholder="Enter Name *" required />
+            <br><br>
+
+            <input type="submit" name="login" value="Submit" />
+        </form>
+    </div>
+</body>
+
+</html>
