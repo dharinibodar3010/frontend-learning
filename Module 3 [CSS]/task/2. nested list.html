@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested List</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* 
+        Nested list: A list inside another list is called nested list.
+                     Nested list is used to create sublist in main list.
+                     Nested list is used to create hierarchy in main list.
+                     Nested list is used to create different-2 style in main list.
+        syntax:
+            <ul>
+                <li>item 1</li>
+                <li>item 2
+                    <ul>
+                        <li>sub item 1</li>
+                        <li>sub item 2</li>
+                    </ul>
+                </li>
+                <li>item 3</li>
+            </ul>
+
+        */
+
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+        }
+        
+        h1 { 
+            text-align: center; 
+            color:#333; 
+            text-shadow: 2px 2px deepskyblue; /* હેડિંગને થોડી શેડો આપવી */  
+        }
+        .heading-line {
+            height: 5px;         /* લાઈન કેટલી જાડી રાખવી છે તે અહીં નક્કી કરો (5px, 10px વગેરે) */
+            background-color: #333; /* લાઈનનો કલર */
+            margin-top: -20px; /* હેડિંગ અને લાઈન વચ્ચેનું અંતર */
+            margin-bottom: 20px; /* લાઈન અને પછીના કન્ટેન્ટ વચ્ચેનું અંતર */
+        }
+        
+        /* કલર્સ સેટ કરવા માટે CSS */
+        .level-1 { color: #2980b9; } /* Blue */
+        .level-2 { color: #e74c3c; } /* Red/Orange */
+        .level-3 { color: #8e44ad; } /* Purple */
+        .level-4 { color: #27ae60; } /* Green */
+        .level-5 { color: #f39c12; } /* Yellow/Orange */
+
+        </style>
+</head>
+<body>
+
+    <h1>Nested List in HTML</h1>
+    <hr class="heading-line">
+
+    <ol class="level-1">
+        <li>Input Devices
+            <ol type="a" class="level-2">
+                <li>Pointing Devices
+                    <ul class="level-3">
+                        <li>Mouse
+                            <ul type="circle" class="level-4">
+                                <li>Optical Mouse</li>
+                                <li>Mechanical Mouse</li>
+                                <li>Wireless Mouse
+                                    <ul type="square" class="level-5">
+                                        <li>RF Mouse</li>
+                                        <li>Bluetooth Mouse</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Trackball</li>
+                        <li>Touchpad</li>
+                        <li>Pointing Stick</li>
+                    </ul>
+                </li>
+                <li>Touch Screen</li>
+                <li>Video Input & Audio Input Devices
+                    <ul class="level-3">
+                        <li>Digital Video Camera</li>
+                        <li>Web Cams</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+
+        <li>Output Devices
+            <ol type="a" class="level-2">
+                <li>Printers
+                    <ul class="level-3">
+                        <li>Impact Printer</li>
+                        <li>Non-Impact Printer</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+    </ol>
+    
+
+</body>
+</html>

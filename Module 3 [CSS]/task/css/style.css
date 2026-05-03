@@ -1,0 +1,166 @@
+/* --- Global Variables & Reset --- */
+:root {
+    --bg-light-blue: #d9edf1;
+    --text-dark: #333;
+    --accent-blue: #5bc0de;
+    --hover-blue: #46a3bb; /* નવો ડાર્ક કલર હોવર માટે */
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background-color: #f4f7f8;
+    border: 25px solid whitesmoke; /* બોડી પર વ્હાઇટિશ બોર્ડર */
+
+}
+
+section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.heading-line {
+    width: 40px;
+    height: 2px;
+    background: #333;
+    margin: 15px auto;
+}
+
+/* --- Buttons with Color Change --- */
+.btn {
+    padding: 10px 20px;
+    border: 2px solid var(--accent-blue); /* બોર્ડર થોડી જાડી કરી */
+    background: transparent;
+    color: var(--accent-blue);
+    margin: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease; /* કલર બદલાતી વખતે સ્મૂધ ઇફેક્ટ આપશે */
+    outline: none;
+}
+
+/* જ્યારે બટન પર ટચ કે હોવર કરો ત્યારે આ ફેરફાર થશે */
+.btn:hover, .btn:active {
+    background-color: var(--accent-blue);
+    color: white; /* ટેક્સ્ટ સફેદ થઈ જશે */
+    border-color: var(--accent-blue);
+    transform: translateY(-2px); /* થોડું ઉપર જશે જે જોવામાં સારું લાગશે */
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    min-height: 500px;
+    background-color: var(--bg-light-blue);
+}
+
+/* --- Right Side Image --- */
+.hero-img {
+    flex: 1;
+    min-width: 300px;
+    min-height: 300px;
+    /* અહીં મેં તમારા કોડમાં સુધારો કરીને તે છોકરીનો ફોટો સેટ કર્યો છે */
+    background: url('https://blogs.vmware.com/euc/wp-content/uploads/sites/9/2019/04/beautiful-beauty-blur-948873-scaled.jpg?w=576&h=324&crop=1') center/cover no-repeat;
+}
+
+
+.hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    border-right: 10px solid whitesmoke; /* ડાબી બાજુએ વ્હાઇટિશ બોર્ડર */
+    
+}
+
+.hero-text h1 { 
+    letter-spacing: 5px; 
+    font-weight: 400; 
+    margin-bottom: 10px;
+}
+
+/* --- About Section --- */
+.about {
+    margin-top: 10px;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+}
+
+.about p { max-width: 600px; margin: 0 auto 20px; line-height: 1.6; }
+
+/* --- Grid Sections --- */
+.grid-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.grid-item {
+    background-color: var(--bg-light-blue);
+    padding: 40px;
+}
+
+.grid-item i { font-size: 40px; margin-bottom: 20px; }
+
+/* --- Pricing Section --- */
+.pricing {
+    background-color: var(--bg-light-blue);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.price-box {
+    padding: 30px;
+    flex: 1;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.3); /* થોડું વ્હાઇટિશ લુક */
+    border-radius: 8px;
+}
+
+.price-box h2 { font-size: 30px; margin: 10px 0; }
+
+/* --- Bootstrap Template Section --- */
+.bootstrap {
+    margin-top: 10px;
+    background-color: var(--bg-light-blue);
+}
+
+/* --- Responsive design (Mobile Friendly) --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* મોબાઈલમાં ફોટો નીચે જતો રહેશે */
+    }
+    
+    .hero-text {
+        order: 2; /* લખાણ નીચે આવશે */
+        padding: 30px 15px;
+    }
+    
+    .hero-img {
+        order: 1; /* ફોટો ઉપર આવશે */
+        height: 300px;
+        width: 100%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* એક જ કોલમ થઈ જશે */
+    }
+    
+    section {
+        padding: 40px 5%;
+    }
+}

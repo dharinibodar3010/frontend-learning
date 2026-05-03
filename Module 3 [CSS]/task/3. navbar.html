@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Task</title>
+    <link rel="stylesheet" href="css/main3.css">
+
+    <style>
+        /* 
+        Navbar Task: Create a responsive navigation bar using HTML and CSS. The navigation bar should include the following features:
+        1. Logo: A logo or brand name on the left side of the navigation bar.
+        2. Navigation Links: A set of navigation links (e.g., Home, About, Services, Contact) aligned to the right side of the navigation bar.
+        3. Responsive Design: The navigation bar should be responsive and adapt to different screen sizes (e.g., collapse into a hamburger menu on smaller screens).
+        4. Hover Effects: Add hover effects to the navigation links for better user experience.
+
+        */
+
+        /* --- Basic Page Setup --- */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* --- Main Navigation Bar --- */
+.navbar {
+    background: #005f8d; /* Main blue color */
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow under the bar */
+    border-bottom: 5px solid #0099e5; /* color border at the bottom */
+    border-top: 5px solid #0099e5; /* color border at the top */
+}
+
+/* --- Navigation Links Container --- */
+.nav-links {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange links side by side */
+    justify-content: center; /* Center the links */
+}
+
+/* --- Individual Menu Items --- */
+.nav-links li {
+    position: relative; /* Base point for dropdown positioning */
+}
+
+.nav-links li a {
+    display: block;
+    color: white;
+    text-decoration: none; /* Remove underline */
+    padding: 15px 25px;
+    font-weight: bold;
+    transition: 0.3s; /* Smooth color change animation */
+}
+
+/* --- Hover Effect for Main Buttons --- */
+.nav-links li:hover > a {
+    background-color: #005f8d; /* Darker blue on hover */
+    color: #ffcc00; /* Text turns yellow on hover */
+}
+
+/* --- Dropdown Menu Container --- */
+.dropdown-content {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Place it relative to the parent 'li' */
+    background-color: #005f8d; 
+    min-width: 180px;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1; /* Make sure it stays on top of other content */
+    border-radius: 4px; /* Rounded corners for dropdown */
+    border: 1px solid black; /* Black border around dropdown */
+}
+
+
+/* --- Show Dropdown on Hover --- */
+.dropdown:hover .dropdown-content {
+    display: block; /* Show menu when hovering over parent item */
+}
+
+/* --- Dropdown Links Styling --- */
+.dropdown-content li a {
+    padding: 12px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Thin divider line */
+}
+
+/* --- Dropdown Hover Effect --- */
+.dropdown-content li a:hover {
+    background-color: #0099e5;
+    color: #ffcc00;
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#">About Us</a></li>
+            
+            <!-- DROPDOWN MENU -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Services</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">WordPress</a></li>
+                    <li><a href="#">Icon Design</a></li>
+                    <li><a href="#">Motion Graphics</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="#">Works</a></li>
+
+
+        </ul>
+        
+    </nav>
+</body>
+</html>
