@@ -1,0 +1,190 @@
+/* 1. Basic Reset and Page Settings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* 
+       Creates the 50-50 split background using a linear gradient.
+       110deg: Angle of the diagonal line.
+       #ffffff 50%: White color covers the first 50%.
+       #ffcf33 50%: Yellow color covers the remaining 50%.
+    */
+    background: linear-gradient(100deg, #ffffff 50%, #ffcf33 50%);
+    height: 100vh;
+    overflow: hidden; /* Prevents unwanted scrollbars */
+}
+
+/* 2. Header and Navigation Styles */
+header {
+    display: flex;
+    justify-content: space-between; /* Spacing between Logo, Nav, and Search */
+    align-items: center;           /* Centers items vertically */
+    padding: 20px 8%;              /* Side padding for alignment */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* 3. Main Content Area (Hero Section) */
+main {
+    display: flex;
+    height: 80vh;
+    align-items: center;           /* Centers content vertically in the middle */
+    padding: 0 8%;
+}
+
+/* Left Section: Rocket Illustration */
+.left {
+    flex: 1;                       /* Takes up 50% of the horizontal space */
+    text-align: center;
+}
+
+.left img {
+    width: 75%;                    /* Adjusts image size */
+    height: auto;
+}
+
+/* Right Section: Heading and Paragraph */
+.right {
+    flex: 1;                       /* Takes up the other 50% of space */
+    padding-left: 200px;            /* Pushes text away from the diagonal line */
+}
+
+.right h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.right p {
+    color: #555;
+    text-align: justify;           /* Justifies the paragraph text */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 420px;             /* Keeps text readable and not too wide */
+}
+
+/* 4. Button Group Styling */
+.buttons {
+    display: flex;
+    flex-direction: column; /* This will stack buttons vertically */
+    gap: 15px;              /* Vertical space between the buttons */
+    align-items: flex-start; /* Aligns buttons to the left (start) */
+}
+
+button {
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;  /* Smooth hover effect */
+}
+
+/* Hollow Button */
+.btn1 {
+    background: transparent;
+    border: 2px solid #333;
+    color: #333;
+    width: 300px;
+    height:40px;
+    text-align: left;
+    padding: 0 20px; /* Adjusts padding for left-aligned text */
+}
+
+/* Dark Solid Button */
+.btn2 {
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+}
+
+/* Hover effects for a better feel */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Media query for screens 580px or smaller */
+
+@media screen and (max-width: 580px) {
+
+    body {
+        /* 1deg ને બદલે 180deg કરો જેથી લાઇન આડી (Horizontal) થઈ જાય */
+        background: linear-gradient(180deg, #ffcf33 50%, white 50%);
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    main {
+        /* ફ્લેક્સ પ્રોપર્ટીથી કન્ટેન્ટને ઊભું (vertical) કરવું */
+        display: flex;
+        flex-direction: column; 
+        padding: 40px 20px;
+        text-align: center;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .left, .right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left img {
+        width: 80%; /* મોબાઇલમાં ઈમેજ થોડી મોટી દેખાય તે માટે */
+        max-width: 280px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .right {
+        margin-top: 10px;
+    }
+
+    .right h1 {
+        font-size: 26px; /* હેડિંગને થોડું સ્પષ્ટ બનાવવા */
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .right p {
+        font-size: 15px;
+        color: #555; /* લખાણ વાંચવામાં સરળ રહે તે માટે ગ્રે કલર */
+        margin-bottom: 25px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 12px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 220px;
+        padding: 12px;
+        border-radius: 5px; /* બટનને થોડો વળાંક આપવા */
+    }
+
+    /* નેવિગેશન સેટિંગ્સ */
+    nav ul {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        padding: 15px;
+    }
+}

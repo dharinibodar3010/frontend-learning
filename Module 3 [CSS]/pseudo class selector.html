@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Class Selector</title>
+
+    <!-- pseudo class selector: :hover, :focus, :active, etc.
+   
+    - :hover - applies when the user hovers over an element with a pointing device (like a mouse).
+    - :focus - applies when an element has received focus, either through keyboard navigation or by clicking on it.
+    - :active - applies when an element is being activated by the user, such as when a button is being clicked. 
+  -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: brown;
+        }
+
+        #navbar {
+            background-color: #333;
+        }
+
+        .navbar-links {
+            text-align: center;
+            /* Aa line links ne center ma lavshe */
+            padding: 10px 0;
+        }
+
+        .navbar-links a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* pseudo class selector */
+        .navbar-links a:hover {
+
+            background-color: #333;
+
+        }
+
+        .navbar-links a:active {
+            color: chartreuse;
+        }
+
+        .navbar-links a:focus {
+            color: red;
+        }
+
+        /* .navbar-links a:visited {
+            color: yellow;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <div id="'navbar">
+        <nav class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
+    <!-- home section -->
+    <section id="home">
+        <h1>Welcome to Our Website</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
+    </section>
+
+    <!-- about section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
+    </section>
+
+    <!-- services section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Web Design</li>
+            <li>SEO Optimization</li>
+            <li>Content Creation</li>
+        </ul>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
+    </section>
+
+</body>
+
+</html>

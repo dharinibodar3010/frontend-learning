@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Web Design</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+	  height: 100vh;          
+      overflow: hidden;       
+	  display: flex;          
+	  flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      border-bottom: 1px solid #e0e0e0;
+      height: 80px;
+	  flex-shrink: 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #E8901A;             
+      border: 3px solid #E8901A;
+      position: relative;
+    }
+    .logo-icon::before,
+    .logo-icon::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .logo-icon::before {       
+      width: 70%;
+      height: 70%;
+      background: white;
+    }
+    .logo-icon::after {       
+      width: 35%;
+      height: 35%;
+      background: #E8901A;
+    }
+
+    .logo-text .top {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      color: #111;
+      letter-spacing: 1px;
+    }
+
+    .logo-text .sub {
+      font-size: 11px;
+      color: #444;
+      letter-spacing: 6px;
+      font-weight: 600;
+    }
+
+    .nav-icons {
+      display: flex;
+      align-items: stretch;
+      height: 80px;            
+    }
+
+    .nav-icon-btn {
+      width: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .nav-icon-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .hero {
+      background: #5A6A58;     
+      padding: 40px 40px;
+    
+	  flex: 1;               
+  	  display: flex;         
+	  flex-direction: column;
+	  justify-content: center; 
+    }
+
+    .hero-title {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title .big {
+      font-family: 'Oswald', sans-serif;
+      font-size: 90px;
+      color: #C8E82A;            /* lime */
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .hero-title .small {
+      font-family: 'Oswald', sans-serif;
+      font-size: 45px;
+      color: #ffffff;
+      letter-spacing: 18px;
+      text-transform: uppercase;
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .banner {
+      background: #E8901A;
+      padding: 15px 30px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner p {
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer-strip {
+      background: #ffffff;
+      padding: 20px;
+	  height: 120px;
+      text-align: center;
+	  flex-shrink: 0; 
+    }
+
+    .footer-strip h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      letter-spacing: 10px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .footer-strip p {
+      font-size: 12px;
+      color: #888;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 15px; height: 70px; }
+      .logo-icon { width: 45px; height: 45px; }
+      .logo-text .top { font-size: 18px; }
+      .logo-text .sub { font-size: 9px; letter-spacing: 4px; }
+      .nav-icons { height: 70px; }
+      .nav-icon-btn { width: 42px; font-size: 18px; }
+
+      .hero { padding: 40px 20px; }
+      .hero-title .big { font-size: 55px; }
+      .hero-title .small { font-size: 24px; letter-spacing: 6px; }
+      .banner { padding: 15px 20px; }
+      .banner p { font-size: 12px; }
+
+      .footer-strip h3 { font-size: 20px; letter-spacing: 6px; }
+    }
+
+    @media (max-width: 400px) {
+      .hero-title .big { font-size: 42px; }
+      .hero-title .small { font-size: 18px; letter-spacing: 4px; }
+      .nav-icon-btn { width: 36px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <div class="top"><strong>RESPONSIVE</strong></div>
+        <div class="sub">WEB DESIGN</div>
+      </div>
+    </div>
+
+    <div class="nav-icons">
+      <div class="nav-icon-btn ">👤</div> 
+      <div class="nav-icon-btn">🌐</div>  
+      <div class="nav-icon-btn">🏠</div>  
+      <div class="nav-icon-btn">⚙</div> 
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-title">
+      <span class="big">RESPONSIVE</span>
+      <span class="small">WEB &nbsp; DESIGN</span>
+    </div>
+
+    <div class="banner">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur quis orci id
+        pharetra. Praesent dignissim metus quis nisl ornare, nec tempor quam semper.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    <h3>R E S P O N S I V E</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur quis orci id pharetra.
+      Praesent dignissim metus quis nisl ornare, nec tempor quam semper.
+    </p>
+  </div>
+
+</body>
+</html>
