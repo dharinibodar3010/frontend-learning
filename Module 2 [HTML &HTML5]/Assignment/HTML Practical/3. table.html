@@ -1,0 +1,82 @@
+<!-- Task: Create a product catalog table that includes the following columns:
+o Product Name
+o Product Image (use placeholder image URLs)
+o Price
+o Description
+o Availability (in stock, out of stock)
+
+Additional Requirements:
+o Use thead for the table header.
+o Add a border and some basic styling using inline CSS.
+o Use colspan or rowspan to merge cells where applicable. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+</head>
+<body>
+    <h2>Product Catalog</h2>
+
+<table border="1" style="width:100%; text-align:center; border-collapse:collapse;">
+
+    <!-- Table Header -->
+    <thead style="background-color:lightgray;">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Availability</th>
+        </tr>
+    </thead>
+
+    <!-- Table Body -->
+    <tr>
+        <td>Mobile</td>
+        <td>
+            <img src="images\mobile.jpg" height="100px" width="70px" alt="Mobile">
+        </td>
+        <td>₹15,000</td>
+        <td>Smartphone with good features</td>
+        <td>In Stock</td>
+    </tr>
+
+    <tr>
+        <td>Laptop</td>
+        <td>
+            <img src="images\laptop.jpg" height="100px" width="100px" alt="Laptop">
+        </td>
+        <td>₹50,000</td>
+        <td>High performance laptop</td>
+        <td>Out of Stock</td>
+    </tr>
+
+    <!-- Using colspan -->
+    <tr>
+        <td colspan="5" style="background-color:#f2f2f2;">
+            Special Offer: Free delivery on all products!
+        </td>
+    </tr>
+
+    <!-- Using rowspan -->
+    <tr>
+        <td rowspan="2">Headphones</td>
+        <td rowspan="2">
+            <img src="images\headphone.jpg" height="100px" width="80px" alt="Headphones">
+        </td>
+        <td>₹2,000</td>
+        <td>Wireless headphones</td>
+        <td>In Stock</td>
+    </tr>
+    <tr>
+        <td>₹1,800</td>
+        <td>Wired headphones</td>
+        <td>In Stock</td>
+    </tr>
+
+</table>
+</body>
+</html>

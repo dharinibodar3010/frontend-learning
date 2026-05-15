@@ -1,0 +1,143 @@
+<!-- Task: Create a blog post layout with the following:
+o A title, subtitle, and body content.
+o Use at least two different fonts (one for headings, one for body content).
+o Style the text to be responsive and easy to read.
+Additional Requirements:
+o Use a custom font from Google Fonts.
+o Adjust line-height, font-size, and spacing for improved readability. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog Post Layout</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background-color: #f4f4f4;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      padding: 20px;
+      color: #333;
+    }
+
+    /* Blog Container */
+    .blog-container{
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Title */
+    .blog-title{
+      font-family: 'Poppins', sans-serif;
+      font-size: 42px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    /* Subtitle */
+    .blog-subtitle{
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      color: #7f8c8d;
+      margin-bottom: 30px;
+    }
+
+    /* Blog Content */
+    .blog-content{
+      font-size: 19px;
+      line-height: 2;
+      text-align: justify;
+    }
+
+    .blog-content p{
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px){
+
+      .blog-container{
+        padding: 20px;
+      }
+
+      .blog-title{
+        font-size: 30px;
+      }
+
+      .blog-subtitle{
+        font-size: 18px;
+      }
+
+      .blog-content{
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="blog-container">
+
+    <!-- Title -->
+    <h1 class="blog-title">
+      The Future of Web Development
+    </h1>
+
+    <!-- Subtitle -->
+    <h3 class="blog-subtitle">
+      Exploring modern technologies and responsive design trends
+    </h3>
+
+    <!-- Blog Content -->
+    <div class="blog-content">
+
+      <p>
+        Web development is evolving rapidly with the introduction of modern frameworks,
+        responsive layouts, and advanced design systems. Developers now focus on creating
+        websites that are fast, user-friendly, and compatible with all screen sizes.
+      </p>
+
+      <p>
+        Responsive design plays a major role in improving the user experience.
+        By using flexible layouts, media queries, and scalable typography,
+        websites can adapt smoothly to mobile devices, tablets, and desktops.
+      </p>
+
+      <p>
+        Modern typography also improves readability. Choosing the right fonts,
+        line spacing, and text alignment helps users read content comfortably
+        on any device. Google Fonts makes it easy to use professional custom fonts
+        in web projects.
+      </p>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

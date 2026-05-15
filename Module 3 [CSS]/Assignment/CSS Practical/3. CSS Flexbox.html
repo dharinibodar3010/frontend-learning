@@ -1,0 +1,133 @@
+<!-- Task: Create a simple webpage layout using Flexbox. The layout should include:
+o A header.
+o A sidebar on the left.
+o A main content area in the center.
+o A footer.
+Additional Requirements:
+o Use Flexbox to position and align the elements.
+o Apply different justify-content and align-items properties to observe their effects.
+o Ensure the layout is responsive, adjusting for smaller screens. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header - Using justify-content and align-items */
+.flex-header {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between; /* Pushes H1 and Nav to opposite sides */
+    align-items: center;            /* Vertically centers items */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Main Body - The core Flex Container */
+.main-body {
+    display: flex;
+    flex: 1; /* Makes the middle section grow to fill screen height */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f4f4f4;
+    width: 200px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+/* Main Content */
+.content {
+    flex: 1; /* Takes up all remaining space */
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically in the main area */
+    align-items: center;     /* Centers text horizontally in the main area */
+}
+
+/* Footer */
+.flex-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+/* Responsive Design (Mobile view) */
+@media (max-width: 768px) {
+    .main-body {
+        flex-direction: column; /* Stack sidebar and main content vertically */
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .flex-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="flex-header">
+        <h1>My Website Header</h1>
+        <nav>
+            <ul class="nav-links">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-body">
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>Links or info here.</p>
+        </aside>
+
+        <main class="content">
+            <h2>Main Content Area</h2>
+            <p>This is the center of the webpage where the primary information goes.</p>
+        </main>
+    </div>
+
+    <footer class="flex-footer">
+        <p>Footer Content &copy; 2026</p>
+    </footer>
+</body>
+</html>

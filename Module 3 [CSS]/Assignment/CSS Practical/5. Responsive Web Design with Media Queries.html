@@ -1,0 +1,165 @@
+<!-- Task: Build a responsive webpage that includes:
+o A navigation bar.
+o A content section with two columns.
+o A footer.
+Additional Requirements:
+o Use media queries to make the webpage responsive for mobile devices.
+o On smaller screens (below 768px), stack the columns vertically.
+o Adjust the font sizes and padding to improve readability on mobile. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar{
+      background-color: #2c3e50;
+      padding: 15px 20px;
+    }
+
+    .navbar ul{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .navbar ul li a{
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar ul li a:hover{
+      color: #f1c40f;
+    }
+
+    /* Content Section */
+    .container{
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .column{
+      flex: 1;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .column h2{
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .column p{
+      font-size: 18px;
+    }
+
+    /* Footer */
+    .footer{
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    /* Media Query for Mobile */
+    @media (max-width: 768px){
+
+      .container{
+        flex-direction: column;
+      }
+
+      .navbar ul{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .navbar ul li a{
+        font-size: 18px;
+      }
+
+      .column{
+        padding: 15px;
+      }
+
+      .column h2{
+        font-size: 22px;
+      }
+
+      .column p{
+        font-size: 16px;
+      }
+
+      .footer{
+        font-size: 16px;
+        padding: 12px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content Section -->
+  <div class="container">
+
+    <div class="column">
+      <h2>Column 1</h2>
+      <p>
+        This is the first column content.
+        The layout is responsive and adjusts automatically on smaller screens.
+      </p>
+    </div>
+
+    <div class="column">
+      <h2>Column 2</h2>
+      <p>
+        This is the second column content.
+        On mobile devices, both columns stack vertically.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2026 Responsive Webpage
+  </div>
+
+</body>
+</html>
