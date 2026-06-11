@@ -1,0 +1,58 @@
+body 
+{
+margin: 0;    
+padding: 0;
+overflow-x: hidden;
+background-color: #fdeef0;
+}
+.nav 
+{
+top: 0;
+position: sticky;  
+z-index: 5;  
+}
+.nav ul li 
+{
+display: inline-block;
+padding: 15px 10px;    
+}
+.nav ul li a 
+{
+text-decoration: none;
+list-style-type: none;
+color: black;
+font-size: 18px;
+font-weight: 600;    
+}
+.content
+{
+z-index: 5;    
+}
+.nav input
+{
+width: 100%;    
+} 
+.login
+{
+width: 35%;
+height: auto;
+margin: auto;    
+}
+@media only screen and (max-width:580px)
+{
+.nav ul li 
+{
+display: block;
+padding: 5px 0px;    
+}  
+.search-box
+{
+margin-left: 0 !important;    
+}
+.login
+{
+width: 96%;
+height: auto;
+margin: auto;    
+}
+}
