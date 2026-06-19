@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-yellow-100">
+
+    <!-- Navbar -->
+    <nav class="bg-black text-white p-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold hover:text-yellow-400">Dharini</h1>
+
+            <ul class="hidden md:flex gap-8">
+                <li class="hover:text-green-400"><a href="#">Home</a></li>
+                <li class="hover:text-green-400"><a href="#">About</a></li>
+                <li class="hover:text-green-400"><a href="#">Services</a></li>
+                <li class="hover:text-green-400"><a href="#">Contact</a></li>
+            </ul>
+
+            <button class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                Login
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-green-700 text-white py-20">
+        <div class="max-w-7xl mx-auto text-center px-5">
+            <h1 class="text-4xl md:text-6xl font-bold">
+                Welcome To My Website
+            </h1>
+
+            <p class="mt-5 text-lg md:text-xl">
+                Learning Tailwind CSS Position Concepts
+            </p>
+
+            <button class="mt-8 bg-white text-green-700 px-6 py-3 rounded-lg font-bold hover:bg-gray-200 transition-colors">
+                Get Started
+            </button>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="max-w-7xl mx-auto py-5 px-5">
+
+        <h2 class="text-4xl font-bold text-center mb-20">
+            Team Members
+        </h2>
+
+        <!-- Team Member Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20">
+
+            <div class="bg-white shadow-lg rounded-3xl relative h-80 hover:scale-105 transition-transform duration-300">
+                <img src="https://i.pinimg.com/736x/1a/e0/28/1ae0289b4aa8103b3a313b5cd89444dc.jpg"
+                    class="w-32 h-32 rounded-2xl absolute -top-12 left-1/2 -translate-x-1/2">
+                <span
+                    class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">Online</span>
+                <div class="pt-24 text-center px-5">
+                    <h3 class="text-xl font-bold">Dharini Bodar</h3>
+                    <p class="text-gray-500 mt-2">Java Developer</p>
+                    <div class="flex justify-center gap-5 mt-5">
+                        <div>
+                            <h4 class="font-bold">4500</h4>
+                            <p>Posts</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">1000</h4>
+                            <p>Followers</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">500</h4>
+                            <p>Following</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-center gap-3">
+                        <button class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors">Follow</button>
+                        <button class="bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-800 transition-colors">Message</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-3xl relative h-80 hover:scale-105 transition-transform duration-300">
+                <img src="https://i.pinimg.com/736x/1a/e0/28/1ae0289b4aa8103b3a313b5cd89444dc.jpg"
+                    class="w-32 h-32 rounded-2xl absolute -top-12 left-1/2 -translate-x-1/2">
+                <span
+                    class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">Online</span>
+                <div class="pt-24 text-center px-5">
+                    <h3 class="text-xl font-bold">Dharini Bodar</h3>
+                    <p class="text-gray-500 mt-2">Backend Developer</p>
+                    <div class="flex justify-center gap-5 mt-5">
+                        <div>
+                            <h4 class="font-bold">4500</h4>
+                            <p>Posts</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">1000</h4>
+                            <p>Followers</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">500</h4>
+                            <p>Following</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-center gap-3">
+                        <button class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors">Follow</button>
+                        <button class="bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-800 transition-colors">Message</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-3xl relative h-80 hover:scale-105 transition-transform duration-300">
+                <img src="https://i.pinimg.com/736x/1a/e0/28/1ae0289b4aa8103b3a313b5cd89444dc.jpg"
+                    class="w-32 h-32 rounded-2xl absolute -top-12 left-1/2 -translate-x-1/2">
+                <span
+                    class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">Online</span>
+                <div class="pt-24 text-center px-5">
+                    <h3 class="text-xl font-bold">Dharini Bodar</h3>
+                    <p class="text-gray-500 mt-2">Frontend Developer</p>
+                    <div class="flex justify-center gap-5 mt-5">
+                        <div>
+                            <h4 class="font-bold">4500</h4>
+                            <p>Posts</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">1000</h4>
+                            <p>Followers</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">500</h4>
+                            <p>Following</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-center gap-3">
+                        <button class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors">Follow</button>
+                        <button class="bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-800 transition-colors">Message</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white shadow-lg rounded-3xl relative h-80 hover:scale-105 transition-transform duration-300">
+                <img src="https://i.pinimg.com/736x/1a/e0/28/1ae0289b4aa8103b3a313b5cd89444dc.jpg"
+                    class="w-32 h-32 rounded-2xl absolute -top-12 left-1/2 -translate-x-1/2">
+                <span
+                    class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">Online</span>
+                <div class="pt-24 text-center px-5">
+                    <h3 class="text-xl font-bold">Dharini Bodar</h3>
+                    <p class="text-gray-500 mt-2">Full Stack Developer</p>
+                    <div class="flex justify-center gap-5 mt-5">
+                        <div>
+                            <h4 class="font-bold">4500</h4>
+                            <p>Posts</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">1000</h4>
+                            <p>Followers</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">500</h4>
+                            <p>Following</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-center gap-3">
+                        <button class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors">Follow</button>
+                        <button class="bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-800 transition-colors">Message</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section> 
+    
+    <!-- Chat Button -->
+    <button class="fixed bottom-5 right-5 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg animate-pulse hover:bg-blue-700 transition-colors">
+        Chat
+    </button>
+
+    <!-- Footer -->
+    <footer class="w-full bg-black text-white text-center p-6 mt-3">
+        <h3 class="text-xl font-bold">
+            © 2026 Dharini Bodar
+        </h3>
+    </footer>
+
+</body>
+
+</html>
