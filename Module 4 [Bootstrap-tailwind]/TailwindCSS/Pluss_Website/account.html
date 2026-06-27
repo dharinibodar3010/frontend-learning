@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - plusS</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style type="text/tailwindcss">
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.85); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        .animate-fadeInUp  { animation: fadeInUp 0.5s ease both; }
+        .animate-fadeIn    { animation: fadeIn 0.3s ease both; }
+        .animate-scaleIn   { animation: scaleIn 0.4s cubic-bezier(.175,.885,.32,1.275) both; }
+
+        /* Popup overlay */
+        #loginPopupOverlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+        }
+        #loginPopupOverlay.show {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- ===================== NAVBAR START ===================== -->
+    <div class="bg-yellow-400 h-10 flex justify-center items-center">
+        <div class="flex items-center gap-6">
+            <button id="announcementPrevBtn2" class="text-lg sm:text-xl cursor-pointer hover:scale-125 duration-300">&#8249;</button>
+            <p id="announcement2" class="text-xs sm:text-sm md:text-base font-medium transition-opacity duration-300 min-w-[270px] text-center">
+                COD Available Across India
+            </p>
+            <button id="announcementNextBtn2" class="text-lg sm:text-xl cursor-pointer hover:scale-125 duration-300">&#8250;</button>
+        </div>
+    </div>
+
+    <nav class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- LOGO -->
+                <a href="index.html" class="text-4xl md:text-5xl font-black tracking-tight">plusS</a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+                    <li><a href="#" class="hover:text-gray-500">Men</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Women</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Return / Exchange</a></li>
+                    <li><a href="#" class="hover:text-gray-500">About Us</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Store Locator</a></li>
+                </ul>
+
+                <!-- Right Icons -->
+                <div class="flex items-center gap-5">
+                    <button class="hover:text-gray-500">
+                        <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                    </button>
+                    <!-- Profile → opens popup -->
+                    <button id="profileBtn" class="hover:text-gray-500" title="My Account">
+                        <i class="fa-regular fa-user text-xl"></i>
+                    </button>
+                    <button class="hover:text-gray-500 relative">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button id="menuBtn" class="lg:hidden text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t bg-white">
+            <div class="px-5 py-4 space-y-4">
+                <a href="#" class="block">Men</a>
+                <a href="#" class="block">Women</a>
+                <a href="#" class="block">Return / Exchange</a>
+                <a href="#" class="block">About Us</a>
+                <a href="#" class="block">Store Locator</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= MARQUEE BAR ================= -->
+    <div class="w-full h-10 flex items-center overflow-hidden bg-gray-100 border-b border-gray-300">
+        <div class="flex w-max animate-scroll">
+            <div class="flex items-center whitespace-nowrap">
+                <div class="px-8 text-sm text-gray-700">Comfort &amp; Fit Guarantee</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">Loved by 1,000,000+ Customers</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">Easy Return &amp; Exchange Apply</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">COD Available</div>
+                <div class="mx-4 text-gray-400">•</div>
+            </div>
+            <div class="flex items-center whitespace-nowrap">
+                <div class="px-8 text-sm text-gray-700">Comfort &amp; Fit Guarantee</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">Loved by 1,000,000+ Customers</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">Easy Return &amp; Exchange Apply</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">COD Available</div>
+                <div class="mx-4 text-gray-400">•</div>
+            </div>
+            <div class="flex items-center whitespace-nowrap">
+                <div class="px-8 text-sm text-gray-700">Comfort &amp; Fit Guarantee</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">Loved by 1,000,000+ Customers</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">Easy Return &amp; Exchange Apply</div>
+                <div class="mx-4 text-gray-400">•</div>
+                <div class="px-8 text-sm text-gray-700">COD Available</div>
+                <div class="mx-4 text-gray-400">•</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= BREADCRUMB ================= -->
+    <div class="max-w-7xl mx-auto px-5 py-4">
+        <nav class="text-sm text-gray-500 flex items-center gap-2">
+            <a href="index.html" class="hover:text-black transition">Home</a>
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+            <span class="text-gray-800 font-medium">Account</span>
+        </nav>
+    </div>
+
+    <!-- ================= PAGE TITLE ================= -->
+    <div class="text-center py-8 animate-fadeInUp">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Log In</h1>
+        <nav class="mt-3 text-sm text-gray-500 flex items-center justify-center gap-2">
+            <a href="index.html" class="hover:text-black">Home</a>
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+            <span>Account</span>
+        </nav>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <div class="max-w-6xl mx-auto px-5 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+            <!-- ===== LOGIN SECTION ===== -->
+            <div class="animate-fadeInUp bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Log In</h2>
+
+                <form id="loginForm" class="space-y-5">
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm outline-none focus:border-black transition-all duration-200 bg-gray-50 focus:bg-white"
+                            required
+                        >
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <div class="relative">
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm outline-none focus:border-black transition-all duration-200 bg-gray-50 focus:bg-white pr-12"
+                                required
+                            >
+                            <button type="button" id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 transition">
+                                <i class="fa-regular fa-eye text-base"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Forgot Password -->
+                    <div class="text-right">
+                        <a href="#" class="text-sm text-gray-500 hover:text-black underline transition">Forgot your password?</a>
+                    </div>
+
+                    <!-- Sign In Button -->
+                    <button
+                        type="submit"
+                        class="w-full bg-black text-white py-3.5 rounded-lg font-semibold text-base hover:bg-gray-800 active:scale-95 transition-all duration-200 mt-2"
+                    >
+                        Sign In
+                    </button>
+
+                </form>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-4 my-6">
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                    <span class="text-sm text-gray-400">or continue with</span>
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                </div>
+
+                <!-- Social Login -->
+                <div class="flex gap-3">
+                    <button class="flex-1 flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 text-sm font-medium hover:bg-gray-50 transition">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Google
+                    </button>
+                    <button class="flex-1 flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 text-sm font-medium hover:bg-gray-50 transition">
+                        <i class="fa-brands fa-facebook text-blue-600 text-lg"></i>
+                        Facebook
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ===== NEW CUSTOMER SECTION ===== -->
+            <div class="animate-fadeInUp bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10" style="animation-delay:0.1s">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">New Customer</h2>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                    Sign up for early Sale access plus tailored new arrivals, trends and promotions.
+                    To opt out, click unsubscribe in our emails.
+                </p>
+
+                <!-- Benefits -->
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-sm text-gray-700">
+                        <span class="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        Early access to new collections &amp; sales
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-700">
+                        <span class="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        Easy order tracking &amp; history
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-700">
+                        <span class="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        Exclusive member-only offers
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-700">
+                        <span class="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        Faster checkout experience
+                    </li>
+                </ul>
+
+                <a href="register.html"
+                    class="inline-block w-full text-center bg-black text-white py-3.5 rounded-lg font-semibold text-base hover:bg-gray-800 active:scale-95 transition-all duration-200">
+                    Create Account
+                </a>
+
+                <p class="text-xs text-gray-400 text-center mt-4">
+                    By creating an account, you agree to our
+                    <a href="#" class="underline hover:text-black">Terms</a> and
+                    <a href="#" class="underline hover:text-black">Privacy Policy</a>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= LOGIN POPUP MODAL ================= -->
+    <!-- This popup appears 3 seconds after profile icon click -->
+    <div id="loginPopupOverlay" class="animate-fadeIn">
+        <div id="loginPopupBox" class="animate-scaleIn bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
+
+            <!-- Purple Header -->
+            <div class="bg-gradient-to-br from-violet-500 to-purple-700 px-8 pt-8 pb-16 relative">
+
+                <!-- Close Button -->
+                <button id="closePopupBtn" class="absolute top-4 right-4 w-8 h-8 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <!-- Logo Box -->
+                <div class="bg-black rounded-xl px-6 py-3 inline-block">
+                    <span class="text-white text-3xl font-black tracking-tight">plusS</span>
+                </div>
+
+            </div>
+
+            <!-- White Card (overlaps purple) -->
+            <div class="mx-6 -mt-10 bg-white rounded-xl shadow-lg p-6 mb-4">
+
+                <h3 class="text-lg font-bold text-gray-800 mb-1">Welcome Back!</h3>
+                <p class="text-sm text-gray-500 mb-5">Login to your plusS account</p>
+
+                <!-- Phone Login -->
+                <div class="flex gap-2 mb-3">
+                    <div class="flex items-center gap-2 border border-gray-300 rounded-lg px-3 py-3 bg-gray-50">
+                        <span>🇮🇳</span>
+                        <span class="text-sm font-medium text-gray-700">+91</span>
+                    </div>
+                    <input
+                        type="tel"
+                        id="popupPhone"
+                        placeholder="10-digit mobile number"
+                        maxlength="10"
+                        class="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-purple-500 transition bg-gray-50 focus:bg-white"
+                    >
+                    <button
+                        id="popupLoginBtn"
+                        class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg text-sm font-semibold transition active:scale-95"
+                        onclick="handlePopupLogin()"
+                    >
+                        Login
+                    </button>
+                </div>
+
+                <p class="text-xs text-gray-400 mt-2">
+                    <i class="fa-solid fa-circle-info mr-1"></i>
+                    By proceeding, you are agreeing to our
+                    <a href="#" class="text-purple-600 hover:underline">T&amp;C</a> and
+                    <a href="#" class="text-purple-600 hover:underline">Privacy Policy</a>.
+                </p>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-3 my-4">
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                    <span class="text-xs text-gray-400">or</span>
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                </div>
+
+                <!-- Email Login Option -->
+                <button onclick="window.location.href='account.html'" class="w-full border border-gray-300 rounded-lg py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-envelope text-gray-500"></i>
+                    Login with Email
+                </button>
+
+            </div>
+
+            <!-- Powered by -->
+            <div class="text-center pb-5 text-xs text-gray-400">
+                Powered by <span class="font-semibold text-gray-600">Shiprocket</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= SUCCESS TOAST ================= -->
+    <div id="successToast" class="fixed top-6 right-6 z-[99999] hidden">
+        <div class="bg-green-600 text-white px-6 py-4 rounded-xl shadow-xl flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-xl"></i>
+            <div>
+                <p class="font-semibold">Logged In Successfully!</p>
+                <p class="text-sm text-green-100">Welcome to plusS</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER (minimal) ================= -->
+    <footer class="bg-black text-white py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-5 text-center text-gray-400 text-sm">
+            © 2026 PlusS Fashion. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        // ========================
+        // ANNOUNCEMENT BAR
+        // ========================
+        const messages2 = [
+            "COD Available Across India",
+            "Free Shipping Available Across India",
+            "Easy Return & Exchange Across India"
+        ];
+        let idx2 = 0;
+        const ann2 = document.getElementById("announcement2");
+        const prev2 = document.getElementById("announcementPrevBtn2");
+        const next2 = document.getElementById("announcementNextBtn2");
+
+        function showMsg2() {
+            ann2.style.opacity = "0";
+            setTimeout(() => { ann2.textContent = messages2[idx2]; ann2.style.opacity = "1"; }, 200);
+        }
+        next2.addEventListener("click", () => { idx2 = (idx2 + 1) % messages2.length; showMsg2(); });
+        prev2.addEventListener("click", () => { idx2 = (idx2 - 1 + messages2.length) % messages2.length; showMsg2(); });
+        setInterval(() => { idx2 = (idx2 + 1) % messages2.length; showMsg2(); }, 3000);
+
+        // ========================
+        // MOBILE MENU
+        // ========================
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            menuBtn.innerHTML = mobileMenu.classList.contains("hidden")
+                ? '<i class="fa-solid fa-bars"></i>'
+                : '<i class="fa-solid fa-xmark"></i>';
+        });
+
+        // ========================
+        // PASSWORD TOGGLE
+        // ========================
+        const togglePassword = document.getElementById("togglePassword");
+        const loginPassword = document.getElementById("loginPassword");
+        togglePassword.addEventListener("click", () => {
+            const isText = loginPassword.type === "text";
+            loginPassword.type = isText ? "password" : "text";
+            togglePassword.innerHTML = isText
+                ? '<i class="fa-regular fa-eye text-base"></i>'
+                : '<i class="fa-regular fa-eye-slash text-base"></i>';
+        });
+
+        // ========================
+        // LOGIN FORM SUBMIT
+        // ========================
+        const loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            showSuccessToast();
+        });
+
+        // ========================
+        // POPUP LOGIC
+        // ========================
+        const overlay   = document.getElementById("loginPopupOverlay");
+        const closeBtn  = document.getElementById("closePopupBtn");
+        const profileBtn = document.getElementById("profileBtn");
+
+        // Open popup when profile icon clicked (with 3-second delay)
+        if (profileBtn) {
+            profileBtn.addEventListener("click", () => {
+                setTimeout(() => {
+                    overlay.classList.add("show");
+                }, 3000);
+            });
+        }
+
+        // Also auto-show popup after 3 seconds on account page load
+        setTimeout(() => {
+            overlay.classList.add("show");
+        }, 3000);
+
+        // Close popup
+        closeBtn.addEventListener("click", () => {
+            overlay.classList.remove("show");
+        });
+
+        // Close when clicking outside the popup box
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove("show");
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") overlay.classList.remove("show");
+        });
+
+        // ========================
+        // POPUP LOGIN
+        // ========================
+        function handlePopupLogin() {
+            const phone = document.getElementById("popupPhone").value.trim();
+            if (phone.length === 10 && /^[0-9]{10}$/.test(phone)) {
+                overlay.classList.remove("show");
+                showSuccessToast();
+            } else {
+                document.getElementById("popupPhone").style.borderColor = "#ef4444";
+                document.getElementById("popupPhone").placeholder = "Enter valid 10-digit number";
+                setTimeout(() => {
+                    document.getElementById("popupPhone").style.borderColor = "";
+                    document.getElementById("popupPhone").placeholder = "10-digit mobile number";
+                }, 2000);
+            }
+        }
+
+        // ========================
+        // SUCCESS TOAST
+        // ========================
+        function showSuccessToast() {
+            const toast = document.getElementById("successToast");
+            toast.classList.remove("hidden");
+            toast.style.animation = "fadeInUp 0.4s ease";
+            setTimeout(() => {
+                toast.style.animation = "fadeIn 0.3s ease reverse";
+                setTimeout(() => toast.classList.add("hidden"), 300);
+            }, 3000);
+        }
+    </script>
+
+</body>
+
+</html>

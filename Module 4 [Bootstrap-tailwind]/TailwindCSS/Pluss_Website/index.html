@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pluss.in</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="bg-yellow-400 h-10 flex justify-center items-center">
+
+        <div class="flex items-center gap-6">
+
+            <!-- Previous -->
+            <button id="announcementPrevBtn" class="text-lg sm:text-xl cursor-pointer hover:scale-125 duration-300">
+                &#8249;
+            </button>
+
+            <!-- Text -->
+            <p id="announcement"
+                class="text-xs sm:text-sm md:text-base font-medium transition-opacity duration-300 min-w-[270px] text-center">
+                COD Available Across India
+            </p>
+
+            <!-- Next -->
+            <button id="announcementNextBtn" class="text-lg sm:text-xl cursor-pointer hover:scale-125 duration-300">
+                &#8250;
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ===================== NAVBAR START ===================== -->
+
+    <nav class="bg-white border-b border-gray-200 shadow-sm">
+
+        <!-- Container -->
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div class="flex justify-between items-center h-20">
+
+                <!-- ================= LOGO ================= -->
+
+                <!-- Click logo → index.html -->
+                <a href="index.html" class="text-4xl md:text-5xl font-black tracking-tight">
+                    plusS
+                </a>
+
+                <!-- ================= Desktop Menu ================= -->
+
+                <ul class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+
+                    <!-- Men -->
+                    <li class="relative">
+                        <button id="desktopMenBtn" class="flex items-center gap-2 hover:text-gray-500 duration-300">
+                            Men
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+
+                        <!-- Dropdown will come in Part 2 -->
+                        <!-- Desktop Men Dropdown -->
+                        <div id="desktopMenMenu"
+                            class="hidden absolute top-full left-0 mt-0 w-56 bg-white shadow-lg border rounded-md py-2 z-50">
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                T-Shirts
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Shirts
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Jeans
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Trousers
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Shoes
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <!-- Women -->
+                    <li class="relative">
+                        <button id="desktopWomenBtn" class="flex items-center gap-2 hover:text-gray-500 duration-300">
+                            Women
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+
+                        <!-- Dropdown will come in Part 2 -->
+                        <div id="desktopWomenMenu"
+                            class="hidden absolute top-full left-0 mt-0 w-56 bg-white shadow-lg border rounded-md py-2 z-50">
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Dresses
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Tops
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Kurtis
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Sarees
+                            </a>
+
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                                Footwear
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#" class="hover:text-gray-500">
+                            Return / Exchange
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="hover:text-gray-500">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="hover:text-gray-500">
+                            Store Locator
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- ================= RIGHT SIDE ICONS ================= -->
+
+                <div class="flex items-center gap-5">
+
+                    <!-- Search -->
+                    <button class="hover:text-gray-500">
+                        <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                    </button>
+
+                    <!-- User / Profile -->
+                    <button id="profileBtn" onclick="openLoginPopup()" class="hover:text-gray-500" title="My Account">
+                        <i class="fa-regular fa-user text-xl"></i>
+                    </button>
+
+                    <!-- Cart -->
+                    <button class="hover:text-gray-500 relative">
+
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+
+                        <!-- Cart Count -->
+                        <span
+                            class="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                            0
+                        </span>
+
+                    </button>
+
+                    <!-- Hamburger -->
+                    <button id="menuBtn" class="lg:hidden text-2xl">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= MOBILE MENU ================= -->
+
+        <div id="mobileMenu" class="hidden lg:hidden border-t bg-white">
+
+            <div class="px-5 py-4 space-y-4">
+
+                <!-- Men -->
+                <button id="mobileMenBtn" class="w-full flex justify-between items-center">
+
+                    Men
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <!-- Mobile dropdown Part-2 -->
+                <div id="mobileMenMenu" class="hidden pl-5 pb-3 space-y-2">
+
+                    <a href="#" class="block">
+                        T-Shirts
+                    </a>
+
+                    <a href="#" class="block">
+                        Shirts
+                    </a>
+
+                    <a href="#" class="block">
+                        Jeans
+                    </a>
+
+                    <a href="#" class="block">
+                        Trousers
+                    </a>
+
+                    <a href="#" class="block">
+                        Shoes
+                    </a>
+
+                </div>
+
+
+                <!-- Women -->
+
+                <button id="mobileWomenBtn" class="w-full flex justify-between items-center">
+
+                    Women
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <!-- Mobile dropdown Part-2 -->
+                <div id="mobileWomenMenu" class="hidden pl-5 pb-3 space-y-2">
+
+                    <a href="#" class="block">
+                        Dresses
+                    </a>
+
+                    <a href="#" class="block">
+                        Tops
+                    </a>
+
+                    <a href="#" class="block">
+                        Kurtis
+                    </a>
+
+                    <a href="#" class="block">
+                        Sarees
+                    </a>
+
+                    <a href="#" class="block">
+                        Footwear
+                    </a>
+
+                </div>
+
+                <a href="#" class="block">
+                    Return / Exchange
+                </a>
+
+                <a href="#" class="block">
+                    About Us
+                </a>
+
+                <a href="#" class="block">
+                    Store Locator
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MARQUEE BAR ================= -->
+    <div class="w-full h-10 flex items-center overflow-hidden bg-gray-100 border-b border-gray-300">
+
+        <div class="flex w-max animate-scroll">
+
+            <!-- FIRST SET -->
+            <div class="flex items-center whitespace-nowrap">
+                <div class="px-8 text-sm text-gray-700">Comfort & Fit Guarantee</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">Loved by 1,000,000+ Customers</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">Easy Return & Exchange Apply</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">COD Available</div>
+                <div class="mx-4 text-gray-400">•</div>
+            </div>
+
+            <!-- SECOND SET (EXACT COPY) -->
+            <div class="flex items-center whitespace-nowrap">
+                <div class="px-8 text-sm text-gray-700">Comfort & Fit Guarantee</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">Loved by 1,000,000+ Customers</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">Easy Return & Exchange Apply</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">COD Available</div>
+                <div class="mx-4 text-gray-400">•</div>
+            </div>
+
+            <!-- THIRD SET (EXACT COPY) -->
+            <div class="flex items-center whitespace-nowrap">
+                <div class="px-8 text-sm text-gray-700">Comfort & Fit Guarantee</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">Loved by 1,000,000+ Customers</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">Easy Return & Exchange Apply</div>
+                <div class="mx-4 text-gray-400">•</div>
+
+                <div class="px-8 text-sm text-gray-700">COD Available</div>
+                <div class="mx-4 text-gray-400">•</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= CATEGORY TOGGLE SECTION (Men / Women Buttons) ================= -->
+    <div class="w-full flex justify-center items-center py-2 bg-gray-200">
+
+        <!-- Button Container -->
+        <div class="flex items-center gap-3">
+
+            <!-- MEN BUTTON -->
+            <button onclick="goToPage('men.html')"
+                class="flex items-center gap-2 px-5 py-1.5 rounded-full bg-black text-white text-sm font-medium hover:scale-105 transition">
+
+                <!-- Men Icon -->
+                <img src="https://cdn-icons-png.flaticon.com/512/236/236831.png" class="w-5 h-5 rounded-full" />
+
+                Men
+            </button>
+
+            <!-- WOMEN BUTTON -->
+            <button onclick="goToPage('women.html')"
+                class="flex items-center gap-2 px-5 py-1.5 rounded-full border border-black text-black text-sm font-medium hover:bg-black hover:text-white transition">
+
+                <!-- Women Icon -->
+                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" class="w-5 h-5 rounded-full" />
+
+                Women
+            </button>
+
+        </div>
+    </div>
+
+    <!-- ================= HERO SECTION CONTAINER ================= -->
+    <!-- HERO BANNER -->
+    <div class="relative w-full overflow-hidden group">
+
+        <!-- Banner Image -->
+        <img src="images/banner1.jpg" alt="Hero Banner"
+            class="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[650px] object-cover transition-transform duration-700 group-hover:scale-105">
+
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
+
+        <!-- Content -->
+        <div class="absolute inset-0 flex items-center justify-end px-6 md:px-16 lg:px-24">
+
+            <div class="max-w-lg text-white">
+
+                <!-- Small Label -->
+                <span
+                    class="inline-block px-4 py-1 mb-4 text-xs font-semibold tracking-widest uppercase bg-white/20 rounded-full backdrop-blur">
+                    New Collection 2026
+                </span>
+
+                <!-- Heading -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    Comfort That
+                    <span class="block text-yellow-400">Finally Fits You</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="mt-4 text-sm md:text-lg text-gray-200">
+                    Discover premium fashion with unmatched comfort and exclusive offers.
+                </p>
+
+                <!-- Offer Box -->
+                <div class="mt-6 bg-white/15 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-2xl">
+
+                    <p class="flex items-center gap-2 mb-2">
+                        ✔ ₹200 OFF on orders above ₹3000
+                    </p>
+
+                    <p class="flex items-center gap-2 mb-2">
+                        ✔ ₹400 OFF on orders above ₹5000
+                    </p>
+
+                    <p class="flex items-center gap-2">
+                        ✔ ₹700 OFF on orders above ₹7000
+                    </p>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex gap-4 mt-8">
+
+                    <a href="shop.html"
+                        class="px-7 py-3 bg-white text-black rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition duration-300">
+                        Shop Now →
+                    </a>
+
+                    <a href="collection.html"
+                        class="px-7 py-3 border border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300">
+                        Explore
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SHOP BY CATEGORY ================= -->
+    <section class="py-12 bg-white">
+
+        <!-- Heading -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+                Shop By Category
+            </h2>
+            <div class="w-20 h-1 bg-black mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper categorySwiper px-4">
+
+            <div class="swiper-wrapper">
+
+                <!-- T-Shirt -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="tshirt.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/tshirt.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">T-Shirt</h3>
+                    </a>
+                </div>
+
+                <!-- Ethnic Wear -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="ethnic.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/ethnic.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">Ethnic Wear</h3>
+                    </a>
+                </div>
+
+                <!-- Jeans -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="jeans.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/jeans.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">Jeans</h3>
+                    </a>
+                </div>
+
+                <!-- Trouser -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="trouser.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/trouser.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">Trouser</h3>
+                    </a>
+                </div>
+
+                <!-- Boxer -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="boxer.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/boxer.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">Boxer</h3>
+                    </a>
+                </div>
+
+                <!-- Track Pant -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="track-pant.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/track-pant.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">Track Pant</h3>
+                    </a>
+                </div>
+
+                <!-- Bermuda -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="bermuda.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/bermuda.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">Bermuda</h3>
+                    </a>
+                </div>
+
+                <!-- Shirt -->
+                <div class="swiper-slide flex justify-center">
+                    <a href="shirt.html" class="group flex flex-col items-center">
+                        <div
+                            class="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 shadow-lg overflow-hidden flex items-center justify-center hover:shadow-2xl transition-all duration-300">
+                            <img src="images/shirt.png"
+                                class="max-w-[85%] max-h-[85%] object-contain transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <h3 class="mt-4 font-medium">Shirt</h3>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BUILT FOR THE TOP BANNER ================= -->
+    <section class="w-full overflow-hidden bg-white">
+
+        <a href="collection.html" class="block group">
+
+            <img src="images/banner2.png" alt="Built For The Top Banner"
+                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+
+        </a>
+
+    </section>
+
+    <!-- ================= TOP WEAR SECTION ================= -->
+    <section class="py-12 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-medium text-center text-gray-800">
+                Top Wear
+            </h2>
+
+            <!-- Tabs -->
+            <div class="mt-10 flex justify-center items-center gap-6 md:gap-8 overflow-x-auto whitespace-nowrap">
+
+                <a href="shirt.html"
+                    class="tab-btn text-black border-b-2 border-black pb-2 transition-all duration-300">
+                    Shirt
+                </a>
+
+                <a href="tshirt.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    T-Shirt
+                </a>
+
+                <a href="sweatshirt.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Sweat Shirt
+                </a>
+
+                <a href="jacket.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Jacket
+                </a>
+
+                <a href="blazer.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Blazer
+                </a>
+
+                <a href="waistcoat.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Waist Coat
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TOP WEAR FEATURED PRODUCTS ================= -->
+
+    <section class="w-full bg-white">
+
+        <div class="w-full px-4 lg:px-6">
+
+            <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+
+                <!-- Product 1 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product1.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <!-- Hover Button -->
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Plus Size Pullover Sweatshirt
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹1990
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹3980
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product2.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Typography Sweatshirt
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹1490
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹2490
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product3.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Cable Knit Sweater
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹4390
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹8780
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product4.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Front Open Sweatshirt
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹1245
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹2490
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= VIEW ALL BUTTON SECTION START ================= -->
+    <section class="w-full bg-white py-12">
+
+        <div class="flex justify-center items-center">
+
+            <a href="products.html" class="bg-black text-white
+                   px-8 md:px-10
+                   py-3
+                   rounded-md
+                   text-sm md:text-base
+                   font-medium
+                   hover:scale-105
+                   hover:bg-neutral-900
+                   active:scale-95
+                   transition-all duration-300">
+
+                View all
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= BANNER SECTION ================= -->
+    <section class="w-full overflow-hidden bg-white">
+
+        <a href="collection.html" class="block group">
+
+            <img src="images/banner3.jpg" alt="Built For The Top Banner"
+                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+
+        </a>
+
+    </section>
+
+
+    <!-- ================= BOTTOM WEAR SECTION ================= -->
+    <section class="py-12 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-medium text-center text-gray-800">
+                Bottom Wear
+            </h2>
+
+            <!-- Tabs -->
+            <div class="mt-10 flex justify-center items-center gap-6 md:gap-8 overflow-x-auto whitespace-nowrap">
+
+                <a href="trouser.html"
+                    class="tab-btn text-black border-b-2 border-black pb-2 transition-all duration-300">
+                    Trouser
+                </a>
+
+                <a href="jeans.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Jeans
+                </a>
+
+                <a href="track-pant.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Track Pant
+                </a>
+
+                <a href="bermuda.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Bermuda
+                </a>
+
+                <a href="boxer.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Boxer
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= BOTTOM WEAR FEATURED PRODUCTS ================= -->
+
+    <section class="w-full bg-white">
+
+        <div class="w-full px-4 lg:px-6">
+
+            <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+
+                <!-- Product 1 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product5.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <!-- Hover Button -->
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Denim Jeans
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹1990
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹3980
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product6.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Trousers
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹2500
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹5000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product7.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Formal Pants
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹4500
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹8000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product8.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Cargo Pants
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹1000
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹2000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= VIEW ALL BUTTON SECTION START ================= -->
+    <section class="w-full bg-white py-12">
+
+        <div class="flex justify-center items-center">
+
+            <a href="products.html" class="bg-black text-white
+                   px-8 md:px-10
+                   py-3
+                   rounded-md
+                   text-sm md:text-base
+                   font-medium
+                   hover:scale-105
+                   hover:bg-neutral-900
+                   active:scale-95
+                   transition-all duration-300">
+
+                View all
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= fourth BANNER SECTION ================= -->
+    <section class="w-full overflow-hidden bg-white">
+
+        <a href="collection.html" class="block group">
+
+            <img src="images/banner4.png" alt="Built For The Top Banner"
+                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+
+        </a>
+
+    </section>
+
+    <!-- ================= THIRD BOTTOM WEAR SECTION ================= -->
+    <section class="py-12 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-medium text-center text-gray-800">
+                Everyday Basics
+            </h2>
+
+            <!-- Tabs -->
+            <div class="mt-10 flex justify-center items-center gap-6 md:gap-8 overflow-x-auto whitespace-nowrap">
+
+                <a href="sando.html"
+                    class="tab-btn text-black border-b-2 border-black pb-2 transition-all duration-300">
+                    Sando
+                </a>
+
+                <a href="bermuda.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Bermuda
+                </a>
+
+                <a href="truncks&briefs.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Truncks & Briefs
+                </a>
+
+                <a href="belt.html"
+                    class="tab-btn text-gray-500 hover:text-black border-b-2 border-transparent pb-2 transition-all duration-300">
+                    Belt
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= THIRD BOTTOM WEAR FEATURED PRODUCTS ================= -->
+
+    <section class="w-full bg-white">
+
+        <div class="w-full px-4 lg:px-6">
+
+            <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+
+                <!-- Product 1 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product9.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <!-- Hover Button -->
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Sando
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹1990
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹3980
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product10.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Bermuda
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹2500
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹5000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product11.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Truncks & Briefs
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹4500
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹8000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group">
+
+                    <div class="relative overflow-hidden bg-[#F8F3EC]">
+
+                        <img src="images/product12.jpg"
+                            class="w-full h-[300px] md:h-[420px] xl:h-[520px] object-cover duration-500 group-hover:scale-105">
+
+                        <div
+                            class="absolute left-4 right-4 bottom-4 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 duration-300">
+
+                            <button
+                                class="w-full bg-white py-3 rounded font-medium hover:bg-black hover:text-white duration-300">
+                                Select Options
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <h3 class="text-xl font-medium">
+                            Belt
+                        </h3>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <span class="text-red-600 text-2xl font-semibold">
+                                ₹1000
+                            </span>
+
+                            <span class="line-through text-gray-400">
+                                ₹2000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= VIEW ALL BUTTON SECTION START ================= -->
+    <section class="w-full bg-white py-12">
+
+        <div class="flex justify-center items-center">
+
+            <a href="products.html" class="bg-black text-white
+                   px-8 md:px-10
+                   py-3
+                   rounded-md
+                   text-sm md:text-base
+                   font-medium
+                   hover:scale-105
+                   hover:bg-neutral-900
+                   active:scale-95
+                   transition-all duration-300">
+
+                View all
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= fifth BANNER SECTION ================= -->
+    <section class="w-full overflow-hidden bg-white">
+
+        <a href="collection.html" class="block group">
+
+            <img src="images/banner5.png" alt="Built For The Top Banner"
+                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+
+        </a>
+
+    </section>
+
+    <!-- ================= TRUSTED CUSTOMERS SECTION ================= -->
+    <section class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
+                Trusted<span class="text-red-500">❤️</span> by
+                <span class="font-bold">10M+</span> Happy Customers
+            </h2>
+
+            <div class="mt-10 grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+
+                <img src="images/trusted1.webp">
+                <img src="images/trusted2.webp">
+                <img src="images/trusted3.webp">
+                <img src="images/trusted3.webp">
+                <img src="images/trusted4.webp">
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="max-w-7xl mx-auto py-14 px-4">
+
+        <div class="grid md:grid-cols-3 gap-10 text-center">
+
+            <div>
+                <h3 class="font-semibold">
+                    FREE & FAST DELIVERY
+                </h3>
+
+                <p class="text-gray-500">
+                    Delivered in 3-5 Working Days
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-semibold">
+                    EASY RETURNS
+                </h3>
+
+                <p class="text-gray-500">
+                    Within 7 Days
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-semibold">
+                    CUSTOMER SUPPORT
+                </h3>
+
+                <p class="text-gray-500">
+                    Mon-Sat 9AM-6PM
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= TESTIMONIALS SECTION ================= -->
+    <section class="bg-white">
+
+        <h2 class="text-center text-blue-500 mb-8">
+            TESTIMONIALS
+        </h2>
+
+        <div class="max-w-7xl mx-auto px-4 text-center">
+
+            <h2 class="text-2xl md:text-5xl font-semibold text-gray-900">
+                Trusted<span class="text-red-500">❤️</span> by
+                <span class="font-bold">10M+</span> Happy Customers
+            </h2>
+        </div>
+
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-8">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Card 1 -->
+            <div
+                class="border rounded-xl p-4 shadow-sm bg-white overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-105">
+
+                <div class="overflow-hidden rounded-lg">
+                    <img src="images/customer1.jpg"
+                        class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+
+                <h4 class="mt-4 font-semibold text-lg">
+                    Good
+                </h4>
+
+                <p class="text-sm text-gray-500">
+                    Excellent fitting and quality.
+                </p>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="border rounded-xl p-4 shadow-sm bg-white overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-105">
+
+                <div class="overflow-hidden rounded-lg">
+                    <img src="images/customers2.jpg"
+                        class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+
+                <h4 class="mt-4 font-semibold text-lg">
+                    Outstanding
+                </h4>
+
+                <p class="text-sm text-gray-500">
+                    Premium quality fabric.
+                </p>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="border rounded-xl p-4 shadow-sm bg-white overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-105">
+
+                <div class="overflow-hidden rounded-lg">
+                    <img src="images/customer1.jpg"
+                        class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+
+                <h4 class="mt-4 font-semibold text-lg">
+                    Highly Recommended
+                </h4>
+
+                <p class="text-sm text-gray-500">
+                    Great fitting for plus size men.
+                </p>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div
+                class="border rounded-xl p-4 shadow-sm bg-white overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-105">
+
+                <div class="overflow-hidden rounded-lg">
+                    <img src="images/customers2.jpg"
+                        class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+
+                <h4 class="mt-4 font-semibold text-lg">
+                    Loved It
+                </h4>
+
+                <p class="text-sm text-gray-500">
+                    Best purchase ever.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= footer ================= -->
+    <footer class="bg-black text-white relative">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <!-- Logo -->
+                <div>
+                    <h2 class="text-6xl font-bold text-white">
+                        plus<span class="font-bold">S</span>
+                    </h2>
+                </div>
+
+                <!-- Men -->
+                <div>
+                    <h3 class="text-yellow-400 text-xl mb-5 font-medium">
+                        Men
+                    </h3>
+
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#">Tops</a></li>
+                        <li><a href="#">Bottoms</a></li>
+                        <li><a href="#">Men's Sportswear</a></li>
+                        <li><a href="#">Winter Wear</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+
+                <!-- Women -->
+                <div>
+                    <h3 class="text-yellow-400 text-xl mb-5 font-medium">
+                        Women
+                    </h3>
+
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#">Tops</a></li>
+                        <li><a href="#">Dresses & Jumpsuits</a></li>
+                        <li><a href="#">Bottoms</a></li>
+                        <li><a href="#">Jackets</a></li>
+                        <li><a href="#">Ethnicwear</a></li>
+                        <li><a href="#">Lingerie</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Co-ord Sets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help + Newsletter -->
+                <div>
+
+                    <h3 class="text-yellow-400 text-xl mb-5 font-medium">
+                        Help
+                    </h3>
+
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Returns & Refund Policy</a></li>
+                        <li><a href="#">Returns & Exchange</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Inclusive Fashion News</a></li>
+                    </ul>
+
+                    <div>
+                        <h2 class="text-4xl text-yellow-400 mb-3">
+                            Sign up and save
+                        </h2>
+
+                        <p class="text-gray-300 mb-5">
+                            Be the first to know about new collections and exclusive offers.
+                        </p>
+
+                        <div class="flex">
+
+                            <input type="email" placeholder="Enter your email"
+                                class="w-full px-4 py-3 bg-white text-black rounded-l-md outline-none">
+
+                            <button
+                                class="bg-yellow-400 text-black px-6 rounded-r-md font-semibold hover:bg-yellow-300 transition">
+                                Subscribe
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-gray-800 mt-12 pt-6 text-center text-gray-400 text-sm">
+                © 2026 PlusS Fashion. All Rights Reserved.
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Floating Buttons -->
+
+    <div class="fixed right-5 bottom-24 z-50">
+
+        <!-- Call Button -->
+        <a href="tel:+919998003879"
+            class="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 text-white shadow-lg animate-bounce mb-4">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.129a11.042 11.042 0 005.516 5.516l1.129-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
+            </svg>
+
+        </a>
+
+        <!-- WhatsApp Button -->
+
+        <a href="https://wa.me/919998003879?text=Hello%20I%20need%20more%20information" target="_blank"
+            class="flex items-center justify-center w-16 h-16 rounded-full bg-green-500 text-white shadow-xl animate-pulse">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+
+                <path
+                    d="M20.52 3.48A11.79 11.79 0 0012.04 0C5.4 0 .02 5.38.02 12.02c0 2.12.55 4.19 1.6 6.02L0 24l6.11-1.59a12.01 12.01 0 005.93 1.51h.01c6.63 0 12.01-5.38 12.01-12.01 0-3.21-1.25-6.23-3.54-8.43zM12.05 21.7a9.64 9.64 0 01-4.91-1.34l-.35-.2-3.62.94.97-3.53-.23-.36a9.62 9.62 0 1116.14-10.58 9.62 9.62 0 01-7.99 15.07zm5.28-7.21c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.44-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.51.07-.77.36-.26.29-1.01.98-1.01 2.39s1.03 2.78 1.17 2.97c.15.19 2.03 3.11 4.92 4.36.69.3 1.23.48 1.65.62.69.22 1.31.19 1.8.12.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z" />
+            </svg>
+
+        </a>
+
+    </div>
+
+    <!-- Scroll To Top Button -->
+
+    <button id="scrollTopBtn"
+        class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-yellow-400 text-black rounded-full shadow-lg hidden hover:scale-110 transition">
+
+        ↑
+
+    </button>
+    <!-- ================= LOGIN POPUP MODAL ================= -->
+    <!-- Shows 3 seconds after profile icon click -->
+    <div id="loginPopupOverlay"
+        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); align-items:center; justify-content:center;"
+    >
+        <div id="loginPopupBox"
+            style="background:#fff; border-radius:1rem; box-shadow:0 25px 60px rgba(0,0,0,0.3); width:100%; max-width:420px; margin:0 16px; overflow:hidden;"
+        >
+            <!-- Purple Header -->
+            <div style="background:linear-gradient(135deg,#7c3aed,#6d28d9); padding:40px 36px 70px 36px; position:relative; text-align:center;">
+
+                <!-- Close Button -->
+                <button
+                    onclick="closeLoginPopup()"
+                    style="position:absolute; top:12px; right:12px; width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,0.25); border:none; cursor:pointer; color:#fff; font-size:15px; display:flex; align-items:center; justify-content:center;"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <!-- plusS Logo -->
+                <div style="display:inline-block; background:#000; border-radius:10px; padding:12px 40px;">
+                    <span style="color:#fff; font-size:30px; font-weight:900; letter-spacing:-1.5px; font-family:Arial,sans-serif;">plusS</span>
+                </div>
+
+            </div>
+
+            <!-- White Floating Card (overlaps purple) -->
+            <div style="margin:-48px 18px 0 18px; background:#fff; border-radius:14px; box-shadow:0 6px 30px rgba(0,0,0,0.13); padding:22px 20px 20px; position:relative; z-index:1; margin-bottom:6px;">
+
+                <!-- Phone Row: all in one unified box -->
+                <div style="display:flex; align-items:stretch; border:1.5px solid #e2e8f0; border-radius:9px; overflow:hidden; margin-bottom:10px; height:48px;">
+
+                    <!-- India Flag + +91 -->
+                    <div style="display:flex; align-items:center; gap:6px; padding:0 12px; background:#f8fafc; border-right:1.5px solid #e2e8f0; flex-shrink:0; white-space:nowrap;">
+                        <svg width="22" height="15" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px; display:block;">
+                            <rect width="900" height="200" y="0"   fill="#FF9933"/>
+                            <rect width="900" height="200" y="200" fill="#ffffff"/>
+                            <rect width="900" height="200" y="400" fill="#138808"/>
+                            <circle cx="450" cy="300" r="66" fill="none" stroke="#000080" stroke-width="9"/>
+                            <circle cx="450" cy="300" r="10" fill="#000080"/>
+                            <line x1="450" y1="234" x2="450" y2="246" stroke="#000080" stroke-width="4"/>
+                            <line x1="450" y1="354" x2="450" y2="366" stroke="#000080" stroke-width="4"/>
+                            <line x1="384" y1="300" x2="396" y2="300" stroke="#000080" stroke-width="4"/>
+                            <line x1="504" y1="300" x2="516" y2="300" stroke="#000080" stroke-width="4"/>
+                            <line x1="403" y1="253" x2="411" y2="261" stroke="#000080" stroke-width="4"/>
+                            <line x1="489" y1="339" x2="497" y2="347" stroke="#000080" stroke-width="4"/>
+                            <line x1="497" y1="253" x2="489" y2="261" stroke="#000080" stroke-width="4"/>
+                            <line x1="411" y1="339" x2="403" y2="347" stroke="#000080" stroke-width="4"/>
+                            <line x1="416" y1="237" x2="420" y2="248" stroke="#000080" stroke-width="4"/>
+                            <line x1="480" y1="352" x2="484" y2="363" stroke="#000080" stroke-width="4"/>
+                            <line x1="484" y1="237" x2="480" y2="248" stroke="#000080" stroke-width="4"/>
+                            <line x1="420" y1="352" x2="416" y2="363" stroke="#000080" stroke-width="4"/>
+                            <line x1="387" y1="270" x2="397" y2="275" stroke="#000080" stroke-width="4"/>
+                            <line x1="503" y1="325" x2="513" y2="330" stroke="#000080" stroke-width="4"/>
+                            <line x1="513" y1="270" x2="503" y2="275" stroke="#000080" stroke-width="4"/>
+                            <line x1="397" y1="325" x2="387" y2="330" stroke="#000080" stroke-width="4"/>
+                        </svg>
+                        <span style="font-size:13px; font-weight:600; color:#374151;">+91</span>
+                    </div>
+
+                    <!-- Phone number input -->
+                    <input
+                        type="tel"
+                        id="popupPhone"
+                        maxlength="10"
+                        placeholder="10-digit mobile number"
+                        style="flex:1; border:none; outline:none; padding:0 12px; font-size:13px; color:#111; background:#fff; min-width:0;"
+                    >
+
+                    <!-- Login button -->
+                    <button
+                        onclick="handlePopupLogin()"
+                        style="background:#7c3aed; color:#fff; border:none; padding:0 20px; font-size:14px; font-weight:700; cursor:pointer; white-space:nowrap; flex-shrink:0;"
+                        onmouseover="this.style.background='#6d28d9';"
+                        onmouseout="this.style.background='#7c3aed';"
+                    >Login</button>
+
+                </div>
+
+                <!-- Terms text -->
+                <p style="font-size:11px; color:#9ca3af; margin:0 0 14px; line-height:1.6;">
+                    &#9432; By proceeding, you are agreeing to our
+                    <a href="#" style="color:#7c3aed; text-decoration:none;">T&amp;C</a> and
+                    <a href="#" style="color:#7c3aed; text-decoration:none;">Privacy Policy</a>.
+                </p>
+
+                <!-- or divider -->
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+                    <div style="flex:1; height:1px; background:#e5e7eb;"></div>
+                    <span style="font-size:12px; color:#b0b7c3;">or</span>
+                    <div style="flex:1; height:1px; background:#e5e7eb;"></div>
+                </div>
+
+                <!-- Login with Email -->
+                <a href="account.html"
+                    style="display:flex; align-items:center; justify-content:center; gap:8px; border:1.5px solid #e5e7eb; border-radius:9px; padding:12px; font-size:13px; font-weight:500; color:#374151; text-decoration:none; background:#fff;"
+                    onmouseover="this.style.background='#f5f3ff'; this.style.borderColor='#c4b5fd';"
+                    onmouseout="this.style.background='#fff'; this.style.borderColor='#e5e7eb';"
+                >
+                    <i class="fa-regular fa-envelope" style="color:#6b7280; font-size:14px;"></i>
+                    Login with Email &amp; Password
+                </a>
+
+            </div>
+
+            <!-- Powered by -->
+            <p style="text-align:center; font-size:11px; color:#adb5bd; padding:14px 0 18px; margin:0;">
+                Powered by <strong style="color:#555; font-weight:600;">Shiprocket</strong>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- ================= SUCCESS TOAST ================= -->
+    <div id="successToast" style="display:none; position:fixed; top:24px; right:24px; z-index:99999;">
+        <div style="background:#16a34a; color:#fff; padding:14px 22px; border-radius:14px; box-shadow:0 10px 40px rgba(0,0,0,0.2); display:flex; align-items:center; gap:12px;">
+            <i class="fa-solid fa-circle-check" style="font-size:24px;"></i>
+            <div>
+                <p style="font-weight:700; margin:0; font-size:15px;">Logged In Successfully!</p>
+                <p style="font-size:12px; color:rgba(255,255,255,0.85); margin:3px 0 0;">Welcome to plusS</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes scaleIn {
+            from { opacity:0; transform:scale(0.88); }
+            to   { opacity:1; transform:scale(1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity:0; transform:translateY(20px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+        #loginPopupBox { animation: scaleIn 0.38s cubic-bezier(.175,.885,.32,1.275) both; }
+        #popupPhone::placeholder { color:#9ca3af; font-size:13px; }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- ================= main js =================  -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
