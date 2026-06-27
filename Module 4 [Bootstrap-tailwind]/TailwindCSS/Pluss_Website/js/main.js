@@ -174,37 +174,6 @@ function goToPage(page) {
 // ===============================================
 // SHOP BY CATEGORY SWIPER
 // ===============================================
-// const swiper = new Swiper(".categorySwiper", {
-//     loop: true,
-//     slidesPerView: 7,
-//     slidesPerGroup: 1,
-//     spaceBetween: 20,
-//     speed: 800,
-
-//     autoplay: {
-//         delay: 2000,
-//         disableOnInteraction: false,
-//     },
-
-//     breakpoints: {
-//         0: {
-//             slidesPerView: 2,
-//         },
-//         640: {
-//             slidesPerView: 3,
-//         },
-//         768: {
-//             slidesPerView: 5,
-//         },
-//         1024: {
-//             slidesPerView: 6,
-//         },
-//         1280: {
-//             slidesPerView: 7,
-//         }
-//     }
-// });
-
 const categorySwiper = new Swiper(".categorySwiper", {
 
     slidesPerView: 2,
@@ -423,3 +392,25 @@ function showSuccessToast() {
     }, 3000);
 }
 
+// ===============================================
+// HERO SECTION DYNAMIC OFFERS (TAILWIND)
+// ===============================================
+const heroOffers = [
+    { discount: "₹200", minOrder: "₹3000" },
+    { discount: "₹400", minOrder: "₹5000" },
+    { discount: "₹700", minOrder: "₹7000" }
+];
+
+function renderHeroOffers() {
+    const offerContainer = document.getElementById("hero-dynamic-offers");
+    
+    if (offerContainer) {
+        offerContainer.innerHTML = heroOffers.map(item => `
+            <p class="flex items-center gap-2 transition-all duration-300 hover:translate-x-1">
+                <span class="text-yellow-400">✔</span> ${item.discount} OFF on orders above ${item.minOrder}
+            </p>
+        `).join('');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", renderHeroOffers);

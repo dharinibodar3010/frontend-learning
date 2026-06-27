@@ -377,65 +377,48 @@
     </div>
 
     <!-- ================= HERO SECTION CONTAINER ================= -->
-    <!-- HERO BANNER -->
-    <div class="relative w-full overflow-hidden group">
+    <div class="w-full flex flex-col md:relative md:block overflow-hidden group bg-zinc-900">
 
-        <!-- Banner Image -->
-        <img src="images/banner1.jpg" alt="Hero Banner"
-            class="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[650px] object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[650px] overflow-hidden relative">
+            <img src="images/banner1.jpg" alt="Hero Banner"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
+            <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent">
+            </div>
+        </div>
 
-        <!-- Content -->
-        <div class="absolute inset-0 flex items-center justify-end px-6 md:px-16 lg:px-24">
+        <div
+            class="w-full md:absolute md:inset-0 flex items-center justify-center md:justify-end px-4 sm:px-6 md:px-16 lg:px-24 bg-zinc-900 md:bg-transparent py-6 md:py-0">
 
-            <div class="max-w-lg text-white">
-
-                <!-- Small Label -->
+            <div class="w-full max-w-sm sm:max-w-md md:max-w-lg text-white">
                 <span
-                    class="inline-block px-4 py-1 mb-4 text-xs font-semibold tracking-widest uppercase bg-white/20 rounded-full backdrop-blur">
+                    class="inline-block px-4 py-1 mb-3 md:mb-4 text-xs font-semibold tracking-widest uppercase bg-white/20 rounded-full backdrop-blur">
                     New Collection 2026
                 </span>
 
-                <!-- Heading -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                    Comfort That
-                    <span class="block text-yellow-400">Finally Fits You</span>
+                <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    Comfort That <span class="block text-yellow-400">Finally Fits You</span>
                 </h1>
 
-                <!-- Description -->
-                <p class="mt-4 text-sm md:text-lg text-gray-200">
+                <p class="mt-2 md:mt-3 text-xs sm:text-sm md:text-lg text-gray-300 md:text-gray-200">
                     Discover premium fashion with unmatched comfort and exclusive offers.
                 </p>
 
-                <!-- Offer Box -->
-                <div class="mt-6 bg-white/15 backdrop-blur-md border border-white/20 rounded-xl p-5 shadow-2xl">
-
-                    <p class="flex items-center gap-2 mb-2">
-                        ✔ ₹200 OFF on orders above ₹3000
-                    </p>
-
-                    <p class="flex items-center gap-2 mb-2">
-                        ✔ ₹400 OFF on orders above ₹5000
-                    </p>
-
-                    <p class="flex items-center gap-2">
-                        ✔ ₹700 OFF on orders above ₹7000
-                    </p>
-
+                <div id="hero-dynamic-offers"
+                    class="mt-4 md:mt-6 bg-white/10 md:bg-white/15 backdrop-blur-md border border-white/20 rounded-xl p-4 sm:p-5 shadow-2xl w-full text-xs sm:text-sm md:text-base font-medium space-y-2">
+                    <p class="flex items-center gap-2">✔ ₹200 OFF on orders above ₹3000</p>
+                    <p class="flex items-center gap-2">✔ ₹400 OFF on orders above ₹5000</p>
+                    <p class="flex items-center gap-2">✔ ₹700 OFF on orders above ₹7000</p>
                 </div>
 
-                <!-- Buttons -->
-                <div class="flex gap-4 mt-8">
-
+                <div class="flex gap-3 sm:gap-4 mt-5 md:mt-8">
                     <a href="shop.html"
-                        class="px-7 py-3 bg-white text-black rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition duration-300">
+                        class="px-5 py-2.5 sm:px-7 sm:py-3 bg-white text-black rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition duration-300 text-xs sm:text-sm md:text-base text-center flex-1 sm:flex-none">
                         Shop Now →
                     </a>
 
                     <a href="collection.html"
-                        class="px-7 py-3 border border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300">
+                        class="px-5 py-2.5 sm:px-7 sm:py-3 border border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 text-xs sm:text-sm md:text-base text-center flex-1 sm:flex-none">
                         Explore
                     </a>
 
@@ -1678,79 +1661,74 @@
     <!-- ================= LOGIN POPUP MODAL ================= -->
     <!-- Shows 3 seconds after profile icon click -->
     <div id="loginPopupOverlay"
-        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); align-items:center; justify-content:center;"
-    >
+        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); align-items:center; justify-content:center;">
         <div id="loginPopupBox"
-            style="background:#fff; border-radius:1rem; box-shadow:0 25px 60px rgba(0,0,0,0.3); width:100%; max-width:420px; margin:0 16px; overflow:hidden;"
-        >
+            style="background:#fff; border-radius:1rem; box-shadow:0 25px 60px rgba(0,0,0,0.3); width:100%; max-width:420px; margin:0 16px; overflow:hidden;">
             <!-- Purple Header -->
-            <div style="background:linear-gradient(135deg,#7c3aed,#6d28d9); padding:40px 36px 70px 36px; position:relative; text-align:center;">
+            <div
+                style="background:linear-gradient(135deg,#7c3aed,#6d28d9); padding:40px 36px 70px 36px; position:relative; text-align:center;">
 
                 <!-- Close Button -->
-                <button
-                    onclick="closeLoginPopup()"
-                    style="position:absolute; top:12px; right:12px; width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,0.25); border:none; cursor:pointer; color:#fff; font-size:15px; display:flex; align-items:center; justify-content:center;"
-                >
+                <button onclick="closeLoginPopup()"
+                    style="position:absolute; top:12px; right:12px; width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,0.25); border:none; cursor:pointer; color:#fff; font-size:15px; display:flex; align-items:center; justify-content:center;">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
 
                 <!-- plusS Logo -->
                 <div style="display:inline-block; background:#000; border-radius:10px; padding:12px 40px;">
-                    <span style="color:#fff; font-size:30px; font-weight:900; letter-spacing:-1.5px; font-family:Arial,sans-serif;">plusS</span>
+                    <span
+                        style="color:#fff; font-size:30px; font-weight:900; letter-spacing:-1.5px; font-family:Arial,sans-serif;">plusS</span>
                 </div>
 
             </div>
 
             <!-- White Floating Card (overlaps purple) -->
-            <div style="margin:-48px 18px 0 18px; background:#fff; border-radius:14px; box-shadow:0 6px 30px rgba(0,0,0,0.13); padding:22px 20px 20px; position:relative; z-index:1; margin-bottom:6px;">
+            <div
+                style="margin:-48px 18px 0 18px; background:#fff; border-radius:14px; box-shadow:0 6px 30px rgba(0,0,0,0.13); padding:22px 20px 20px; position:relative; z-index:1; margin-bottom:6px;">
 
                 <!-- Phone Row: all in one unified box -->
-                <div style="display:flex; align-items:stretch; border:1.5px solid #e2e8f0; border-radius:9px; overflow:hidden; margin-bottom:10px; height:48px;">
+                <div
+                    style="display:flex; align-items:stretch; border:1.5px solid #e2e8f0; border-radius:9px; overflow:hidden; margin-bottom:10px; height:48px;">
 
                     <!-- India Flag + +91 -->
-                    <div style="display:flex; align-items:center; gap:6px; padding:0 12px; background:#f8fafc; border-right:1.5px solid #e2e8f0; flex-shrink:0; white-space:nowrap;">
-                        <svg width="22" height="15" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" style="border-radius:2px; display:block;">
-                            <rect width="900" height="200" y="0"   fill="#FF9933"/>
-                            <rect width="900" height="200" y="200" fill="#ffffff"/>
-                            <rect width="900" height="200" y="400" fill="#138808"/>
-                            <circle cx="450" cy="300" r="66" fill="none" stroke="#000080" stroke-width="9"/>
-                            <circle cx="450" cy="300" r="10" fill="#000080"/>
-                            <line x1="450" y1="234" x2="450" y2="246" stroke="#000080" stroke-width="4"/>
-                            <line x1="450" y1="354" x2="450" y2="366" stroke="#000080" stroke-width="4"/>
-                            <line x1="384" y1="300" x2="396" y2="300" stroke="#000080" stroke-width="4"/>
-                            <line x1="504" y1="300" x2="516" y2="300" stroke="#000080" stroke-width="4"/>
-                            <line x1="403" y1="253" x2="411" y2="261" stroke="#000080" stroke-width="4"/>
-                            <line x1="489" y1="339" x2="497" y2="347" stroke="#000080" stroke-width="4"/>
-                            <line x1="497" y1="253" x2="489" y2="261" stroke="#000080" stroke-width="4"/>
-                            <line x1="411" y1="339" x2="403" y2="347" stroke="#000080" stroke-width="4"/>
-                            <line x1="416" y1="237" x2="420" y2="248" stroke="#000080" stroke-width="4"/>
-                            <line x1="480" y1="352" x2="484" y2="363" stroke="#000080" stroke-width="4"/>
-                            <line x1="484" y1="237" x2="480" y2="248" stroke="#000080" stroke-width="4"/>
-                            <line x1="420" y1="352" x2="416" y2="363" stroke="#000080" stroke-width="4"/>
-                            <line x1="387" y1="270" x2="397" y2="275" stroke="#000080" stroke-width="4"/>
-                            <line x1="503" y1="325" x2="513" y2="330" stroke="#000080" stroke-width="4"/>
-                            <line x1="513" y1="270" x2="503" y2="275" stroke="#000080" stroke-width="4"/>
-                            <line x1="397" y1="325" x2="387" y2="330" stroke="#000080" stroke-width="4"/>
+                    <div
+                        style="display:flex; align-items:center; gap:6px; padding:0 12px; background:#f8fafc; border-right:1.5px solid #e2e8f0; flex-shrink:0; white-space:nowrap;">
+                        <svg width="22" height="15" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"
+                            style="border-radius:2px; display:block;">
+                            <rect width="900" height="200" y="0" fill="#FF9933" />
+                            <rect width="900" height="200" y="200" fill="#ffffff" />
+                            <rect width="900" height="200" y="400" fill="#138808" />
+                            <circle cx="450" cy="300" r="66" fill="none" stroke="#000080" stroke-width="9" />
+                            <circle cx="450" cy="300" r="10" fill="#000080" />
+                            <line x1="450" y1="234" x2="450" y2="246" stroke="#000080" stroke-width="4" />
+                            <line x1="450" y1="354" x2="450" y2="366" stroke="#000080" stroke-width="4" />
+                            <line x1="384" y1="300" x2="396" y2="300" stroke="#000080" stroke-width="4" />
+                            <line x1="504" y1="300" x2="516" y2="300" stroke="#000080" stroke-width="4" />
+                            <line x1="403" y1="253" x2="411" y2="261" stroke="#000080" stroke-width="4" />
+                            <line x1="489" y1="339" x2="497" y2="347" stroke="#000080" stroke-width="4" />
+                            <line x1="497" y1="253" x2="489" y2="261" stroke="#000080" stroke-width="4" />
+                            <line x1="411" y1="339" x2="403" y2="347" stroke="#000080" stroke-width="4" />
+                            <line x1="416" y1="237" x2="420" y2="248" stroke="#000080" stroke-width="4" />
+                            <line x1="480" y1="352" x2="484" y2="363" stroke="#000080" stroke-width="4" />
+                            <line x1="484" y1="237" x2="480" y2="248" stroke="#000080" stroke-width="4" />
+                            <line x1="420" y1="352" x2="416" y2="363" stroke="#000080" stroke-width="4" />
+                            <line x1="387" y1="270" x2="397" y2="275" stroke="#000080" stroke-width="4" />
+                            <line x1="503" y1="325" x2="513" y2="330" stroke="#000080" stroke-width="4" />
+                            <line x1="513" y1="270" x2="503" y2="275" stroke="#000080" stroke-width="4" />
+                            <line x1="397" y1="325" x2="387" y2="330" stroke="#000080" stroke-width="4" />
                         </svg>
                         <span style="font-size:13px; font-weight:600; color:#374151;">+91</span>
                     </div>
 
                     <!-- Phone number input -->
-                    <input
-                        type="tel"
-                        id="popupPhone"
-                        maxlength="10"
-                        placeholder="10-digit mobile number"
-                        style="flex:1; border:none; outline:none; padding:0 12px; font-size:13px; color:#111; background:#fff; min-width:0;"
-                    >
+                    <input type="tel" id="popupPhone" maxlength="10" placeholder="10-digit mobile number"
+                        style="flex:1; border:none; outline:none; padding:0 12px; font-size:13px; color:#111; background:#fff; min-width:0;">
 
                     <!-- Login button -->
-                    <button
-                        onclick="handlePopupLogin()"
+                    <button onclick="handlePopupLogin()"
                         style="background:#7c3aed; color:#fff; border:none; padding:0 20px; font-size:14px; font-weight:700; cursor:pointer; white-space:nowrap; flex-shrink:0;"
                         onmouseover="this.style.background='#6d28d9';"
-                        onmouseout="this.style.background='#7c3aed';"
-                    >Login</button>
+                        onmouseout="this.style.background='#7c3aed';">Login</button>
 
                 </div>
 
@@ -1772,8 +1750,7 @@
                 <a href="account.html"
                     style="display:flex; align-items:center; justify-content:center; gap:8px; border:1.5px solid #e5e7eb; border-radius:9px; padding:12px; font-size:13px; font-weight:500; color:#374151; text-decoration:none; background:#fff;"
                     onmouseover="this.style.background='#f5f3ff'; this.style.borderColor='#c4b5fd';"
-                    onmouseout="this.style.background='#fff'; this.style.borderColor='#e5e7eb';"
-                >
+                    onmouseout="this.style.background='#fff'; this.style.borderColor='#e5e7eb';">
                     <i class="fa-regular fa-envelope" style="color:#6b7280; font-size:14px;"></i>
                     Login with Email &amp; Password
                 </a>
@@ -1790,7 +1767,8 @@
 
     <!-- ================= SUCCESS TOAST ================= -->
     <div id="successToast" style="display:none; position:fixed; top:24px; right:24px; z-index:99999;">
-        <div style="background:#16a34a; color:#fff; padding:14px 22px; border-radius:14px; box-shadow:0 10px 40px rgba(0,0,0,0.2); display:flex; align-items:center; gap:12px;">
+        <div
+            style="background:#16a34a; color:#fff; padding:14px 22px; border-radius:14px; box-shadow:0 10px 40px rgba(0,0,0,0.2); display:flex; align-items:center; gap:12px;">
             <i class="fa-solid fa-circle-check" style="font-size:24px;"></i>
             <div>
                 <p style="font-weight:700; margin:0; font-size:15px;">Logged In Successfully!</p>
@@ -1801,19 +1779,41 @@
 
     <style>
         @keyframes scaleIn {
-            from { opacity:0; transform:scale(0.88); }
-            to   { opacity:1; transform:scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.88);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
+
         @keyframes fadeInUp {
-            from { opacity:0; transform:translateY(20px); }
-            to   { opacity:1; transform:translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        #loginPopupBox { animation: scaleIn 0.38s cubic-bezier(.175,.885,.32,1.275) both; }
-        #popupPhone::placeholder { color:#9ca3af; font-size:13px; }
+
+        #loginPopupBox {
+            animation: scaleIn 0.38s cubic-bezier(.175, .885, .32, 1.275) both;
+        }
+
+        #popupPhone::placeholder {
+            color: #9ca3af;
+            font-size: 13px;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
     <!-- ================= main js =================  -->
     <script src="js/main.js"></script>
 </body>
