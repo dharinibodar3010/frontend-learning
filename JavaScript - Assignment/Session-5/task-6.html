@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Write an arrow function called formatFollowers -->
+
+    <script>
+
+        const formatFollowers = (count) => {
+
+            if (count >= 1000000) {
+
+                return (count / 1000000).toFixed(1) + "M";
+
+            }
+            else if (count >= 1000) {
+
+                return (count / 1000).toFixed(1) + "K";
+
+            }
+            else {
+
+                return count;
+
+            }
+
+        }
+
+        document.write(formatFollowers(1500));
+        document.write("<br>");
+        document.write(formatFollowers(2000000));
+
+    </script>
+    
+</body>
+
+</html>
