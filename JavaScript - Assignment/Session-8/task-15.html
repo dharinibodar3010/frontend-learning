@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Create an array called favApps with 5 objects, each having title and url. 
+     Use splice() to remove the third app and insert a new app object for your most-used app at 
+     that position. Log the final array. -->
+
+    <script>
+
+        let favApps = [
+
+            {
+                title: "WhatsApp",
+                url: "www.whatsapp.com"
+            },
+
+            {
+                title: "Instagram",
+                url: "www.instagram.com"
+            },
+
+            {
+                title: "Facebook",
+                url: "www.facebook.com"
+            },
+
+            {
+                title: "YouTube",
+                url: "www.youtube.com"
+            },
+
+            {
+                title: "Spotify",
+                url: "www.spotify.com"
+            }
+
+        ];
+
+        favApps.splice(2, 1, {
+
+            title: "ChatGPT",
+
+            url: "www.chatgpt.com"
+
+        });
+
+        console.log(favApps);
+
+    </script>
+
+</body>
+
+</html>

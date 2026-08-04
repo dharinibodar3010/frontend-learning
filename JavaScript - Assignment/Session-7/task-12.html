@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+
+            width: 400px;
+
+            height: 250px;
+
+            background: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Display the X and Y coordinates of the mouse when you click anywhere inside a div 
+        by using the event object in your click event handler. -->
+
+    <div id="box"> Click Here </div>
+
+    <p id="result"></p>
+
+    <script>
+
+        document.getElementById("box").addEventListener("click", function (event) {
+
+            document.getElementById("result").innerHTML =
+
+                "X = " + event.clientX +
+
+                " Y = " + event.clientY;
+
+        });
+
+    </script>
+
+</body>
+
+</html>

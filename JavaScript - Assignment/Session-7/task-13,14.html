@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!-- Log the type and coordinates (clientX, clientY) of any mouse event (click, mouseover, etc.) 
+ when the user interacts with a Flipkart-style 'Add to Cart' button, using the event object. -->
+
+    <button id="cart">
+
+        Add to Cart
+
+    </button>
+
+    <script>
+
+        let button = document.getElementById("cart");
+
+        button.addEventListener("click", showEvent);
+
+        button.addEventListener("mouseover", showEvent);
+
+        function showEvent(event) {
+
+            console.log("Type : " + event.type);
+
+            console.log("X : " + event.clientX);
+
+            console.log("Y : " + event.clientY);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

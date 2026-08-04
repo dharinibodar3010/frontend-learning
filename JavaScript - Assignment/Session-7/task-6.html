@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Build a simple Zomato-style food order form with a dropdown for cuisine and 
+     an input for quantity — use the onchange event on the dropdown to display a message 
+     showing which cuisine was selected. -->
+
+    <h2>Zomato Order</h2>
+
+    <!-- Select Cuisine Field -->
+    <label for="cuisineSelect">Cuisine:</label>
+    <select id="cuisineSelect" name="cuisine" onchange="showCuisine(this)">
+        <option value="">Select Cuisine</option>
+        <option value="Gujarati">Gujarati</option>
+        <option value="Punjabi">Punjabi</option>
+        <option value="Chinese">Chinese</option>
+        <option value="South Indian">South Indian</option>
+    </select>
+
+    <br><br>
+
+    <!-- Quantity Field -->
+    <label for="quantityInput">Quantity:</label>
+    <input type="number" id="quantityInput" name="quantity" min="1" value="1">
+
+    <p id="result"></p>
+
+    <script>
+        function showCuisine(select) {
+            if (select.value) {
+                document.getElementById("result").innerHTML = "You selected : " + select.value;
+            } else {
+                document.getElementById("result").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

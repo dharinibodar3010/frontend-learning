@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Create a function that updates the background color of a <div id="moodbox"></div> 
+     in real-time as the user types a color name (like 'pink' or 'yellow') into an input 
+     box.<br><br><em><strong>Hint:</strong> Listen for the input event and 
+     use .style.backgroundColor.</em> -->
+
+    <input type="text" id="colorInput" placeholder="Enter Color">
+
+    <div id="moodbox"></div>
+
+    <style>
+        #moodbox {
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+    </style>
+    
+    <script>
+
+        let input = document.querySelector("#colorInput");
+
+        let box = document.getElementById("moodbox");
+
+
+        input.addEventListener("input", function () {
+
+            box.style.backgroundColor = input.value;
+
+        });
+
+    </script>
+
+</body>
+
+</html>

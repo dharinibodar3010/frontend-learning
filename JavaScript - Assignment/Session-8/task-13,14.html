@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Create an array called orders, where each order is an object with properties: orderId, items 
+     (an array of objects with itemName and price), and delivery (an object with address and status). 
+     Write a loop to display each order's orderId and total price of all items. -->
+
+    <script>
+
+        let orders = [
+
+            {
+
+                orderId: 101,
+
+                items: [
+
+                    {
+                        itemName: "Pizza",
+                        price: 300
+                    },
+
+                    {
+                        itemName: "Burger",
+                        price: 150
+                    }
+
+                ],
+
+                delivery: {
+
+                    address: "Rajkot",
+
+                    status: "Delivered"
+
+                }
+
+            },
+
+            {
+
+                orderId: 102,
+
+                items: [
+
+                    {
+                        itemName: "Sandwich",
+                        price: 120
+                    },
+
+                    {
+                        itemName: "Cold Drink",
+                        price: 80
+                    }
+
+                ],
+
+                delivery: {
+
+                    address: "Ahmedabad",
+
+                    status: "Pending"
+
+                }
+
+            }
+
+        ];
+
+        for (let i = 0; i < orders.length; i++) {
+
+            let total = 0;
+
+            for (let j = 0; j < orders[i].items.length; j++) {
+
+                total = total + orders[i].items[j].price;
+
+            }
+
+            console.log("Order ID = " + orders[i].orderId);
+
+            console.log("Total Price = " + total);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

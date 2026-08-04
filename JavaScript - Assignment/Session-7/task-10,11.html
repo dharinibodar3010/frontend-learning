@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .movie {
+
+            border: 1px solid black;
+
+            padding: 10px;
+
+            margin: 10px;
+
+            width: 200px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Display a list of 3 movies (hardcoded) and add a 'Remove' button next to each. 
+ Use addEventListener to remove the movie card from the DOM when its button is clicked.  -->
+
+    <div class="movie"> Avengers <button> Remove </button> </div>
+
+    <div class="movie"> Pushpa <button> Remove </button> </div>
+
+    <div class="movie"> KGF <button> Remove </button> </div>
+
+    <script>
+
+        let buttons = document.querySelectorAll("button");
+
+        buttons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                button.parentElement.remove();
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
