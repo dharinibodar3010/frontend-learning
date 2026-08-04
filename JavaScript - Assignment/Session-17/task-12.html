@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Removal</title>
+    <style>
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 250px;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .remove-btn {
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="addCardBtn">Add New Card</button>
+
+    <!-- Parent Container -->
+    <div id="cardContainer">
+        <div class="card">
+            <span>Card 1</span>
+            <span class="remove-btn">X</span>
+        </div>
+    </div>
+
+    <script>
+        const cardContainer = document.getElementById('cardContainer');
+        const addCardBtn = document.getElementById('addCardBtn');
+        let cardCount = 1;
+
+        // FIXED: Single event listener on the parent container (Event Delegation)
+        cardContainer.addEventListener('click', function (event) {
+            // Check if the clicked element is the remove button
+            if (event.target.classList.contains('remove-btn')) {
+                // Safely remove the closest parent card element
+                event.target.closest('.card').remove();
+            }
+        });
+
+        // Code to add cards dynamically
+        addCardBtn.addEventListener('click', function () {
+            cardCount++;
+            const newCard = document.createElement('div');
+            newCard.className = 'card';
+            newCard.innerHTML = `
+                <span>Card ${cardCount}</span>
+                <span class="remove-btn">X</span>
+            `;
+            cardContainer.appendChild(newCard);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Add a Clear Wishlist button to your wishlist code that removes the wishlist key from localStorage 
+     and updates the display immediately. -->
+
+    <button onclick="clearWishlist()">
+
+        Clear Wishlist
+
+    </button>
+
+    <div id="wishlist"></div>
+
+    <script>
+
+        let products = [
+
+            {
+
+                name: "Laptop",
+
+                price: 55000
+
+            },
+
+            {
+
+                name: "Mouse",
+
+                price: 700
+
+            },
+
+            {
+
+                name: "Keyboard",
+
+                price: 1500
+
+            }
+
+        ];
+
+        if (localStorage.getItem("wishlist") == null) {
+
+            localStorage.setItem(
+
+                "wishlist",
+
+                JSON.stringify(products)
+
+            );
+
+        }
+
+        display();
+
+        function display() {
+
+            let data =
+
+                JSON.parse(localStorage.getItem("wishlist"))
+
+                || [];
+
+            let output = "";
+
+            for (let i = 0; i < data.length; i++) {
+
+                output +=
+
+                    "<p>" + data[i].name +
+
+                    " - ₹" + data[i].price +
+
+                    "</p>";
+
+            }
+
+            document.getElementById("wishlist").innerHTML = output;
+
+        }
+
+        function clearWishlist() {
+
+            localStorage.removeItem("wishlist");
+
+            document.getElementById("wishlist").innerHTML = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

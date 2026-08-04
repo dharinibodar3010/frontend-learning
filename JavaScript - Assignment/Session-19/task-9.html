@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Restaurant Manager</title>
+
+    <style>
+        .restaurant {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Display the list of added restaurants below the form, showing name, cuisine, and rating for each, 
+     with Edit and Delete buttons next to each entry. -->
+
+    <h2>Add Restaurant</h2>
+
+
+    <form id="restaurantForm">
+
+
+        <input type="text" id="name" placeholder="Restaurant Name">
+
+        <br><br>
+
+
+        <input type="text" id="cuisine" placeholder="Cuisine">
+
+
+        <br><br>
+
+
+        <input type="number" id="rating" placeholder="Rating">
+
+
+        <br><br>
+
+
+        <button type="submit">
+            Add Restaurant
+        </button>
+
+
+    </form>
+
+    <h2>Restaurant List</h2>
+
+    <div id="restaurantList"></div>
+
+    <script>
+
+        let restaurants = [];
+
+        let editIndex = -1;
+
+        let form = document.getElementById("restaurantForm");
+
+        let restaurantList = document.getElementById("restaurantList");
+
+        form.addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            let restaurant = {
+
+                name: name.value,
+
+                cuisine: cuisine.value,
+
+                rating: rating.value
+
+            };
+
+            if (editIndex === -1) {
+
+                restaurants.push(restaurant);
+            }
+
+            else {
+
+                restaurants[editIndex] = restaurant;
+
+                editIndex = -1;
+            }
+
+            displayRestaurants();
+
+            form.reset();
+        });
+
+        function displayRestaurants() {
+
+            restaurantList.innerHTML = "";
+
+            restaurants.forEach((restaurant, index) => {
+
+                restaurantList.innerHTML += `
+
+                <div class="restaurant">
+
+                <h3>${restaurant.name}</h3>
+
+                <p>Cuisine : ${restaurant.cuisine}</p>
+
+                <p>Rating : ⭐ ${restaurant.rating}</p>
+
+                <button onclick="editRestaurant(${index})">
+                Edit
+                </button>
+
+                <button onclick="deleteRestaurant(${index})">
+                Delete
+                </button>
+
+
+                </div>
+
+
+                `;
+            });
+        }
+
+        // Task 12 Delete Feature
+        function deleteRestaurant(index) {
+
+            restaurants.splice(index, 1);
+
+            displayRestaurants();
+
+        }
+
+        // Task 13 Edit Feature
+        function editRestaurant(index) {
+
+            let restaurant = restaurants[index];
+
+            name.value = restaurant.name;
+
+            cuisine.value = restaurant.cuisine;
+
+            rating.value = restaurant.rating;
+
+            editIndex = index;
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

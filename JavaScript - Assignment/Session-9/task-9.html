@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Write a function getRecentSearches() that reads the recentSearches item from localStorage, 
+     parses it from JSON, and returns the array. If nothing is saved yet, return an empty array. -->
+
+    <script>
+
+        function getRecentSearches() {
+
+            let data = localStorage.getItem("recentSearches");
+
+            if (data == null) {
+                return [];
+            }
+
+            return JSON.parse(data);
+
+        }
+
+        console.log(getRecentSearches());
+
+    </script>
+
+</body>
+
+</html>

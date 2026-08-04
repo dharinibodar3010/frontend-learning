@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Create an HTML file with a <script> tag and use setTimeout to display a 'Loading your feed...' 
+        message after 2 seconds, then replace it with 'Feed loaded!' after another 2 seconds. -->
+
+    <h2>Instagram Feed</h2>
+
+    <p id="message"></p>
+
+
+    <script>
+
+        setTimeout(function () {
+
+            document.getElementById("message").innerHTML = "Loading your feed...";
+
+
+            setTimeout(function () {
+
+                document.getElementById("message").innerHTML = "Feed loaded!";
+
+            }, 2000);
+
+
+        }, 2000);
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Implement a Clear Favorites button on your restaurant list page that removes the saved data from 
+     localStorage using localStorage.removeItem() and updates the UI accordingly. -->
+
+    <button onclick="clearFavorites()">
+
+        Clear Favorites
+
+    </button>
+
+    <ul id="list"></ul>
+
+    <script>
+
+        let restaurants =
+
+            JSON.parse(localStorage.getItem("restaurants"))
+
+            || [];
+
+        display();
+
+        function display() {
+
+            let output = "";
+
+            for (let i = 0; i < restaurants.length; i++) {
+
+                output += "<li>" + restaurants[i] + "</li>";
+
+            }
+
+            document.getElementById("list").innerHTML = output;
+
+        }
+
+        function clearFavorites() {
+
+            localStorage.removeItem("restaurants");
+
+            restaurants = [];
+
+            display();
+
+        }
+
+    </script>
+</body>
+
+</html>

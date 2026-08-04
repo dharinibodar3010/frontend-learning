@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Write a function that takes a JSON string representing a list of favorite YouTube channels and 
+     returns an array of channel names using JSON.parse(). -->
+
+    <script>
+
+        let json = '["CodeWithHarry","Apna College","Geeky Shows"]';
+
+        function getChannels(data) {
+
+            let channels = JSON.parse(data);
+
+            return channels;
+
+        }
+
+        console.log(getChannels(json));
+
+    </script>
+
+</body>
+
+</html>

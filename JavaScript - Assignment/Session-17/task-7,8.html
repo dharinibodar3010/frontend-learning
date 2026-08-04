@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story Remove</title>
+
+    <style>
+        .story {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        button {
+            margin-left: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Given code snippet where individual event listeners are added to each Instagram story card for removal, 
+        refactor the code to use a single event listener on parent container (event delegation). -->
+
+    <h2>Instagram Stories</h2>
+
+    <div id="stories">
+
+        <div class="story">
+            Rahul Story
+            <button class="remove-btn">Remove</button>
+        </div>
+
+        <div class="story">
+            Amit Story
+            <button class="remove-btn">Remove</button>
+        </div>
+
+        <div class="story">
+            Priya Story
+            <button class="remove-btn">Remove</button>
+        </div>
+        
+    </div>
+
+    <script>
+
+        // Single event listener on parent container
+        const stories = document.getElementById("stories");
+
+        stories.addEventListener("click", function (event) {
+
+            // Check clicked element is remove button
+            if (event.target.classList.contains("remove-btn")) {
+
+                // Remove only clicked story card
+                event.target.parentElement.remove();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

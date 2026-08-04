@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Simulate a Flipkart-style wishlist: create an array of 3 products (each with name and price), save 
+     it in localStorage as wishlist, then reload the page and display the wishlist items by reading 
+     and parsing the data from localStorage. -->
+
+    <h2>Wishlist</h2>
+
+    <div id="wishlist"></div>
+
+    <script>
+
+        let products = [
+
+            {
+
+                name: "Laptop",
+
+                price: 55000
+
+            },
+
+            {
+
+                name: "Mouse",
+
+                price: 800
+
+            },
+
+            {
+
+                name: "Keyboard",
+
+                price: 1500
+
+            }
+
+        ];
+
+        if (localStorage.getItem("wishlist") == null) {
+
+            localStorage.setItem(
+
+                "wishlist",
+
+                JSON.stringify(products)
+
+            );
+
+        }
+
+        let wishlist =
+
+            JSON.parse(localStorage.getItem("wishlist"));
+
+        let output = "";
+
+        for (let i = 0; i < wishlist.length; i++) {
+
+            output +=
+
+                "<p>" + wishlist[i].name +
+
+                " - ₹" + wishlist[i].price +
+
+                "</p>";
+
+        }
+
+        document.getElementById("wishlist").innerHTML = output;
+
+    </script>
+
+</body>
+
+</html>
