@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creator Profile Link Manager</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Creator Profile Link Manager</h1>
+
+
+        <!-- Link Form -->
+
+        <form id="linkForm">
+
+            <label for="titleInput">
+                Link Title
+            </label>
+
+            <input type="text" id="titleInput" placeholder="Enter link title">
+
+
+            <label for="urlInput">
+                URL
+            </label>
+
+            <input type="url" id="urlInput" placeholder="https://example.com">
+
+
+            <button type="submit">
+                Add Link
+            </button>
+
+            <!-- Error Message -->
+
+            <p id="errorMessage"></p>
+
+        </form>
+
+
+        <!-- Profile Preview -->
+
+        <div class="preview">
+
+            <h2>Profile Preview</h2>
+
+            <div id="linksContainer"></div>
+
+        </div>
+
+    </div>
+
+
+    <script type="module" src="js/main.js">
+    </script>
+
+</body>
+
+</html>

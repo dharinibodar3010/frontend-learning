@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Social Bio Link Builder</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Creator Profile -->
+        <div class="profile">
+
+            <div class="profile-image">
+                DB
+            </div>
+
+            <h1 id="creatorName"></h1>
+
+            <p id="bio"></p>
+
+            <p id="followers"></p>
+
+            <span id="verifiedBadge"></span>
+
+        </div>
+
+
+        <!-- Add Social Link -->
+        <div class="add-link">
+
+            <h2>Add Social Link</h2>
+
+            <input
+                type="text"
+                id="platformInput"
+                placeholder="Platform name">
+
+            <input
+                type="url"
+                id="urlInput"
+                placeholder="https://example.com">
+
+            <button id="addBtn">
+                Add Link
+            </button>
+
+        </div>
+
+
+        <!-- Social Links -->
+        <div id="linksContainer"></div>
+
+    </div>
+
+
+    <!-- JavaScript Module -->
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
