@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Playlist Link Tasks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Playlist Link Manager</h1>
+
+
+        <!-- Task 1, 2 & 3 -->
+
+        <section class="card">
+
+            <h2>Task 1, 2 & 3 - Add Playlist</h2>
+
+            <button onclick="testAddPlaylist()">
+                Add Spotify Playlist
+            </button>
+
+            <button onclick="testAddMyPlaylist()">
+                Add YouTube Playlist
+            </button>
+
+        </section>
+
+
+        <!-- Task 4 & 5 -->
+
+        <section class="card">
+
+            <h2>Task 4 & 5 - URL Validation</h2>
+
+            <input
+                type="text"
+                id="urlInput"
+                placeholder="Enter URL"
+            >
+
+            <button onclick="checkURL()">
+                Validate URL
+            </button>
+
+            <p id="urlMessage"></p>
+
+        </section>
+
+
+        <!-- Task 6 -->
+
+        <section class="card">
+
+            <h2>Task 6 - Edit Playlist</h2>
+
+            <button onclick="testEditPlaylist()">
+                Edit First Playlist
+            </button>
+
+        </section>
+
+
+        <!-- Task 7, 8 & 12 -->
+
+        <section class="card">
+
+            <h2>Task 7, 8 & 12 - Theme</h2>
+
+            <button onclick="toggleTheme()">
+                Toggle Light / Dark Mode
+            </button>
+
+        </section>
+
+
+        <!-- Task 9 -->
+
+        <section class="card">
+
+            <h2>Task 9 - Delete Playlist</h2>
+
+            <button onclick="testDeletePlaylist()">
+                Delete First Playlist
+            </button>
+
+        </section>
+
+
+        <!-- Task 10 & 11 -->
+
+        <section class="card">
+
+            <h2>Task 10 & 11 - Manage Link</h2>
+
+            <button onclick="testManageAdd()">
+                Add Link
+            </button>
+
+            <button onclick="testManageEdit()">
+                Edit Link
+            </button>
+
+        </section>
+
+
+        <!-- Task 13 & 14 -->
+
+        <section class="card">
+
+            <h2>Task 13 & 14 - Instagram URL</h2>
+
+            <input
+                type="text"
+                id="instagramInput"
+                placeholder="Instagram Profile URL"
+            >
+
+            <button onclick="validateInstagram()">
+                Validate Instagram
+            </button>
+
+            <p id="instagramError"></p>
+
+        </section>
+
+
+        <!-- Task 15 -->
+
+        <section class="card">
+
+            <h2>Task 15 - Playlist URL</h2>
+
+            <input
+                type="text"
+                id="playlistInput"
+                placeholder="Spotify or YouTube URL"
+            >
+
+            <button onclick="checkPlaylistLink()">
+                Validate Playlist URL
+            </button>
+
+            <p id="playlistError"></p>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript files -->
+
+    <script src="tasks/task1-playlist.js"></script>
+
+    <script src="tasks/task3-playlist.js"></script>
+
+    <script src="tasks/task4-validation.js"></script>
+
+    <script src="tasks/task6-edit.js"></script>
+
+    <script src="tasks/task7-theme.js"></script>
+
+    <script src="tasks/task9-delete.js"></script>
+
+    <script src="tasks/task10-manage.js"></script>
+
+    <script src="tasks/task13-instagram.js"></script>
+
+    <script src="tasks/task15-validate-link.js"></script>
+
+</body>
+
+</html>
