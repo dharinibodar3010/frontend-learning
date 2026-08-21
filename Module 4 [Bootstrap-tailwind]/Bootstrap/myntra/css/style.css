@@ -1,609 +1,225 @@
-/* ===================================================
-   MYNTRA CLONE - GLOBAL STYLES
-   Author: Myntra Clone Project
-   Version: 2.0 (Optimized)
-=================================================== */
-
-/* ---------- CSS Custom Properties (Design Tokens) ---------- */
-:root {
-    --primary:    #ff3f6c;    /* Myntra brand pink */
-    --primary-dk: #d42b58;    /* Darker shade for hover */
-    --dark:       #1a1a2e;    /* Deep navy dark */
-    --accent:     #7c3aed;    /* Premium purple accent */
-    --success:    #16a34a;
-    --bg-light:   #fdeef0;    /* Soft pink background */
-    --text-muted: #6b7280;
-    --shadow-sm:  0 2px 8px rgba(0,0,0,.08);
-    --shadow-md:  0 8px 24px rgba(0,0,0,.12);
-    --shadow-lg:  0 16px 40px rgba(0,0,0,.18);
-    --radius:     12px;
-    --transition: .3s ease;
-}
-
-/* ---------- Base Reset ---------- */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    overflow-x: hidden;
-    background-color: var(--bg-light);
-    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-    color: #1a1a2e;
-    line-height: 1.6;
-}
-
-/* ---------- Page Loader ---------- */
-.loader-container {
-    position: fixed;
-    inset: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background: #fff;
-    z-index: 9999;
-}
-
-.loader {
-    width: 3.5rem;
-    height: 3.5rem;
-}
-
-/* ---------- Main Content (hidden until loader done) ---------- */
-#main-content {
-    display: none;
-}
-
-/* ===================================================
-   NAVIGATION
-=================================================== */
-.site-nav {
-    top: 0;
-    position: sticky;
-    z-index: 1030;
-    background: #fff;
-    box-shadow: var(--shadow-sm);
-    padding: 0 1.5rem;
-}
-
-/* Nav links list */
-.site-nav .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 0;
-}
-
-.site-nav .nav-links li {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 10px;
-}
-
-.site-nav .nav-links li a {
-    text-decoration: none;
-    color: #1a1a2e;
-    font-size: 15px;
-    font-weight: 600;
-    transition: color var(--transition);
-    white-space: nowrap;
-}
-
-.site-nav .nav-links li a:hover {
-    color: var(--primary);
-}
-
-/* Search box inside nav */
-.search-box .input-group {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1.5px solid #e5e7eb !important;
-    background: #f9fafb;
-    transition: border-color var(--transition), box-shadow var(--transition);
-    min-width: 280px;
-}
-
-.search-box .input-group:focus-within {
-    border-color: var(--primary) !important;
-    box-shadow: 0 0 0 3px rgba(255, 63, 108, .15);
-}
-
-.search-box .form-control {
-    background: transparent;
-    border: 0;
-    font-size: 14px;
-}
-
-.search-box .form-control:focus {
-    box-shadow: none;
-    background: transparent;
-}
-
-/* Account button in nav */
-.btn-account {
-    background: linear-gradient(135deg, var(--dark), var(--accent));
-    border: 0;
-    color: #fff !important;
-    border-radius: 8px;
-    padding: 6px 14px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: opacity var(--transition), transform var(--transition);
-    white-space: nowrap;
-}
-
-.btn-account:hover {
-    opacity: .88;
-    transform: translateY(-1px);
-}
-
-/* Bag link */
-.bag-link {
-    position: relative;
-    font-weight: 600;
-}
-
-.bag-link .badge-count {
-    position: absolute;
-    top: -6px;
-    right: -10px;
-    background: var(--primary);
-    color: #fff;
-    border-radius: 50%;
-    font-size: 10px;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ===================================================
-   HERO CAROUSEL / BANNER
-=================================================== */
-.carousel-inner img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: top;
-}
-
-/* ===================================================
-   CATEGORY SIDEBAR
-=================================================== */
-.category-sidebar .card-header {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dk));
-    color: #fff;
-    border-radius: var(--radius) var(--radius) 0 0;
-}
-
-/* ===================================================
-   PRODUCT CARDS
-=================================================== */
-.product-card {
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
-    position: relative;
-}
-
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg) !important;
-}
-
-.product-img {
-    height: 230px;
-    width: 100%;
-    object-fit: cover;
-    transition: transform .4s ease;
+body 
+{
+margin: 0;    
+padding: 0;
+overflow-x: hidden;
+background-color: #fdeef0;
 }
+#loader
+{
 
-.product-card:hover .product-img {
-    transform: scale(1.04);
 }
-
-/* Wishlist icon overlay */
-.product-card .wish-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255,255,255,.85);
-    border: none;
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-    transition: background var(--transition), color var(--transition);
-    font-size: 16px;
-    color: #999;
-    z-index: 2;
-}
-
-.product-card .wish-btn:hover,
-.product-card .wish-btn.active {
-    background: var(--primary);
-    color: #fff;
-}
-
-/* Discount badge */
-.discount-badge {
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 4px;
-}
-
-/* ===================================================
-   PRODUCT DETAILS PAGE
-=================================================== */
-.product-main-img {
-    height: 600px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: var(--radius);
-}
-
-.thumbnail-img {
-    height: 120px;
-    width: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: transform var(--transition), border-color var(--transition);
-    border: 2px solid transparent;
-}
-
-.thumbnail-img:hover,
-.thumbnail-img.active {
-    transform: scale(1.05);
-    border-color: var(--primary);
-}
-
-.similar-img {
-    height: 260px;
-    object-fit: cover;
-}
-
-/* Size selector */
-.size-btn {
-    min-width: 42px;
-    height: 42px;
-    border-radius: 50% !important;
-    font-weight: 700;
-    border: 2px solid #d1d5db;
-    transition: border-color var(--transition), background var(--transition), color var(--transition);
-}
-
-.size-btn:hover,
-.size-btn.selected {
-    border-color: var(--primary);
-    background: var(--primary);
-    color: #fff;
-}
-
-/* Quantity box */
-.quantity-box {
-    width: 140px;
-}
-
-.quantity-box input {
-    text-align: center;
-    pointer-events: none;
-}
-
-/* ===================================================
-   SHOPPING CART (BAGS PAGE)
-=================================================== */
-.cart-item-img {
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.price-details {
-    position: sticky;
-    top: 80px;
-}
-
-/* ===================================================
-   CLIENT TESTIMONIALS CAROUSEL
-=================================================== */
-.client-img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border: 4px solid var(--primary);
-    display: block;
-    margin: 0 auto 12px;
-}
-
-.testimonial-section .carousel-control-prev,
-.testimonial-section .carousel-control-next {
-    width: 8%;
-}
-
-/* ===================================================
-   ACCOUNT / PROFILE MODAL
-=================================================== */
-/* Profile Header gradient */
-.profile-modal-header {
-    background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
-    border-radius: var(--radius) var(--radius) 0 0;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    color: #fff;
-    position: relative;
-}
-
-.profile-avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 4px solid rgba(255,255,255,.5);
-    object-fit: cover;
-    margin-bottom: .75rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.profile-name {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: .2rem;
-}
-
-.profile-email {
-    font-size: .85rem;
-    opacity: .8;
-    margin-bottom: 0;
+#main-content
+{
+display: none;
 }
-
-/* Profile menu list */
-.profile-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.nav 
+{
+top: 0;
+position: sticky;  
+z-index: 10 !important;  
 }
-
-.profile-menu li a,
-.profile-menu li button {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #374151;
-    font-size: 15px;
-    font-weight: 500;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    transition: background var(--transition), color var(--transition), padding-left var(--transition);
-    border-bottom: 1px solid #f3f4f6;
+.nav ul li 
+{
+display: inline-block;
+padding: 15px 10px;    
 }
-
-.profile-menu li:last-child a,
-.profile-menu li:last-child button {
-    border-bottom: none;
+.nav ul li a 
+{
+text-decoration: none;
+list-style-type: none;
+color: black;
+font-size: 18px;
+font-weight: 600;    
 }
-
-.profile-menu li a:hover,
-.profile-menu li button:hover {
-    background: #fdf2f4;
-    color: var(--primary);
-    padding-left: 28px;
+.content
+{
+z-index: 5;    
 }
-
-.profile-menu li a i,
-.profile-menu li button i {
-    width: 22px;
-    font-size: 17px;
-    color: var(--accent);
-    flex-shrink: 0;
+.nav input
+{
+width: 100%;    
+} 
+.login
+{
+width: 35%;
+height: auto;
+margin: auto;    
 }
-
-.profile-menu .logout-btn {
-    color: var(--primary);
+.carousel-inner
+{
+width: 100%;
+height: auto;    
 }
-
-.profile-menu .logout-btn i {
-    color: var(--primary);
+.carousel-inner img 
+{
+width: 100%;
+height: 380px;    
 }
 
-/* Auth buttons in profile modal */
-.profile-modal-body .btn-login {
-    background: linear-gradient(135deg, var(--dark), var(--accent));
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 24px;
-    font-weight: 700;
-    transition: opacity var(--transition), transform var(--transition);
-}
+/* Testimonials */
 
-.profile-modal-body .btn-login:hover {
-    opacity: .88;
-    transform: translateY(-1px);
+.testimonial-card{
+    max-width:700px;
+    border-radius:15px;
+    background:#fff;
 }
 
-.profile-modal-body .btn-register {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dk));
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 24px;
-    font-weight: 700;
-    transition: opacity var(--transition), transform var(--transition);
+.testimonial-img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border:4px solid #ff3f6c;
 }
 
-.profile-modal-body .btn-register:hover {
-    opacity: .88;
-    transform: translateY(-1px);
+.carousel-item{
+    padding:20px 0;
 }
 
-/* ===================================================
-   LOGIN / REGISTER MODAL
-=================================================== */
-.auth-modal-header {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dk));
-    color: #fff;
-    border-radius: var(--radius) var(--radius) 0 0;
+.carousel-control-prev,
+.carousel-control-next{
+    width:8%;
 }
-
-.auth-modal .nav-tabs .nav-link {
-    color: #6b7280;
-    font-weight: 600;
-    border: none;
-    border-bottom: 3px solid transparent;
-    transition: color var(--transition), border-color var(--transition);
+.client-testimonials img 
+{
+width: 200px;
+height: 200px;    
 }
 
-.auth-modal .nav-tabs .nav-link.active {
-    color: var(--primary);
-    border-bottom-color: var(--primary);
-    background: none;
+.quantity-box{
+    width:120px;
 }
 
-/* ===================================================
-   FOOTER
-=================================================== */
-footer {
-    background: var(--dark) !important;
+.quantity-box input{
+    text-align:center;
 }
 
-footer h5 {
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff;
+.card img{
+    object-fit:cover;
 }
-
-footer ul li {
-    margin-bottom: .4rem;
+.price-details 
+{
+ z-index: -5 !important;   
 }
 
-footer a.footer-link {
-    color: #d1d5db;
-    text-decoration: none;
-    transition: color var(--transition);
-    font-size: 14px;
+.product-main-img{
+    height:600px;
+    width:100%;
+    object-fit:cover;
 }
 
-footer a.footer-link:hover {
-    color: var(--primary);
+.thumbnail-img{
+    height:120px;
+    width:100%;
+    object-fit:cover;
+    cursor:pointer;
+    transition:.3s;
 }
 
-footer .social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.08);
-    color: #fff;
-    font-size: 17px;
-    text-decoration: none;
-    transition: background var(--transition), transform var(--transition);
-    margin-right: .5rem;
+.thumbnail-img:hover{
+    transform:scale(1.05);
 }
 
-footer .social-icon:hover {
-    background: var(--primary);
-    transform: translateY(-3px);
+.similar-img{
+    height:280px;
+    object-fit:cover;
 }
 
-/* ===================================================
-   UTILITY / MICRO-ANIMATIONS
-=================================================== */
-/* Smooth fade-in for sections */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity .5s ease, transform .5s ease;
+.quantity-box{
+    width:150px;
 }
 
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+.product-card{
+    transition:.3s;
 }
 
-/* Button hover lift */
-.btn:not(.btn-account):not(.btn-link) {
-    transition: transform var(--transition), box-shadow var(--transition);
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15)!important;
 }
 
-.btn-danger:hover {
-    background: var(--primary-dk);
-    box-shadow: 0 4px 14px rgba(255, 63, 108, .35);
-    transform: translateY(-2px);
+.loader-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
 }
 
-.btn-outline-dark:hover {
-    transform: translateY(-2px);
+.loader{
+    width:4rem;
+    height:4rem;
 }
-
-/* ===================================================
-   RESPONSIVE BREAKPOINTS
-=================================================== */
 
-/* Tablet (≤ 768px) */
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-    /* Carousel image height */
-    .carousel-inner img {
-        height: 220px;
+    .product-main-img{
+        height:350px;
     }
 
-    /* Product details */
-    .product-main-img { height: 320px; }
-    .thumbnail-img    { height: 75px; }
-    .similar-img      { height: 200px; }
-
-    /* Quantity box full-width on mobile */
-    .quantity-box { width: 100%; }
-
-    /* Cart item layout */
-    .card-body .d-flex {
-        flex-direction: column;
-        align-items: flex-start !important;
+    .thumbnail-img{
+        height:80px;
     }
 
-    /* Price details not sticky on mobile */
-    .price-details { position: relative !important; top: 0 !important; }
+    .similar-img{
+        height:220px;
+    }
 
-    /* Testimonial carousel arrows hidden on small */
-    .testimonial-section .carousel-control-prev,
-    .testimonial-section .carousel-control-next { display: none; }
+    .quantity-box{
+        width:100%;
+    }
 }
 
-/* Mobile (≤ 576px) */
-@media (max-width: 576px) {
 
-    /* Nav links stack vertically */
-    .site-nav .nav-links li {
-        display: block;
-        padding: 6px 0;
+@media(max-width:768px){
+
+    .quantity-box{
+        width:100%;
+        margin-top:15px;
     }
 
-    .search-box { margin-left: 0 !important; }
-    .search-box .input-group { min-width: 100%; }
+    .card-body .d-flex{
+        flex-direction:column;
+        align-items:flex-start !important;
+    }
 
-    /* Product image smaller on tiny screens */
-    .product-img { height: 180px; }
+    .sticky-top{
+        position:relative !important;
+        top:0 !important;
+    }
+}
+@media (max-width:768px){
+
+    .testimonial-card{
+        width:95%;
+        padding:20px !important;
+    }
+
+    .testimonial-img{
+        width:80px;
+        height:80px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next{
+        display:none;
+    }
+}
+@media only screen and (max-width:580px)
+{
+.nav ul li 
+{
+display: block;
+padding: 5px 0px;    
+}  
+.search-box
+{
+margin-left: 0 !important;    
+}
+.login
+{
+width: 96%;
+height: auto;
+margin: auto;    
+}
 }

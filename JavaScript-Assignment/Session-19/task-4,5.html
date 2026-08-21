@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Display the list of playlists below the form, showing each playlist's name and description, and 
+     update the display every time a new playlist is added. -->
+
+    <h2>Create Playlist</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Playlist Name">
+        <br><br>
+        <input id="desc" placeholder="Description">
+        <br><br>
+        <button type="submit">Add Playlist</button>
+    </form>
+
+    <h3>Playlist List</h3>
+    <div id="list"></div>
+
+    <script>
+        let playlists = [];
+
+        let form = document.getElementById("form");
+
+        let playlistName = document.getElementById("name");
+        let playlistDesc = document.getElementById("desc");
+        let playlistList = document.getElementById("list");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            playlists.push({
+                name: playlistName.value,
+                description: playlistDesc.value
+            });
+
+            display();
+
+            form.reset();
+        });
+
+        function display() {
+            playlistList.innerHTML = "";
+
+            playlists.forEach(p => {
+                playlistList.innerHTML += `
+                <h3>${p.name}</h3>
+                <p>${p.description}</p>
+                <hr>
+            `;
+            });
+        }
+    </script>
+</body>
+
+</html>

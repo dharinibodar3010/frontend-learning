@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!-- Write a function addToCart that adds a product name to a visible cart section 
+ when a 'Add to Cart' button is clicked, but attach the click event using addEventListener 
+ instead of the onclick attribute. -->
+
+    <h2>Product</h2>
+
+    <p>iPhone 16</p>
+
+    <button id="cartBtn">
+
+        Add to Cart
+
+    </button>
+
+    <h3>Cart</h3>
+
+    <div id="cart"></div>
+
+    <script>
+
+        let button = document.querySelector("#cartBtn");
+
+        button.addEventListener("click", addToCart);
+
+        function addToCart() {
+
+            let item = document.createElement("p");
+
+            item.innerHTML = "iPhone 16";
+
+            document.querySelector("#cart").appendChild(item);
+
+        }
+
+    </script>
+</body>
+
+</html>

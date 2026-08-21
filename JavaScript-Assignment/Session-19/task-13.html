@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edit Feature</title>
+</head>
+
+<body>
+
+    <!-- Add an Edit feature: when the Edit button is clicked for a restaurant, pre-fill the form with that
+    restaurant's details, allow the user to update them, and save the changes back to the array and UI. -->
+
+    <h2>Add / Edit Restaurant</h2>
+
+    <form id="restaurantForm">
+
+        <input type="text" id="name" placeholder="Restaurant Name">
+
+        <br><br>
+
+
+        <input type="text" id="cuisine" placeholder="Cuisine">
+
+        <br><br>
+
+
+        <input type="number" id="rating" placeholder="Rating">
+
+        <br><br>
+
+
+        <button type="submit">
+            Save Restaurant
+        </button>
+
+    </form>
+
+    <h2>Restaurant List</h2>
+
+    <div id="restaurantList"></div>
+
+    <script>
+
+        let restaurants = [
+
+            {
+                name: "Domino's Pizza",
+                cuisine: "Italian",
+                rating: 4.5
+            },
+
+            {
+                name: "Burger King",
+                cuisine: "Fast Food",
+                rating: 4.2
+            }
+
+        ];
+
+        let editIndex = -1;
+
+        let form = document.getElementById("restaurantForm");
+
+        let restaurantList = document.getElementById("restaurantList");
+
+        form.addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            let restaurant = {
+
+                name: name.value,
+
+                cuisine: cuisine.value,
+
+                rating: rating.value
+
+            };
+
+            if (editIndex === -1) {
+
+                restaurants.push(restaurant);
+
+            }
+
+            else {
+
+                restaurants[editIndex] = restaurant;
+
+                editIndex = -1;
+            }
+
+            displayRestaurants();
+
+            form.reset();
+
+        });
+
+        function displayRestaurants() {
+
+            restaurantList.innerHTML = "";
+
+            restaurants.forEach((restaurant, index) => {
+
+                restaurantList.innerHTML += `
+
+                <h3>${restaurant.name}</h3>
+
+                <p>Cuisine: ${restaurant.cuisine}</p>
+
+                <p>Rating: ${restaurant.rating}</p>
+
+                <button onclick="editRestaurant(${index})">
+                Edit
+                </button>
+
+                <button onclick="deleteRestaurant(${index})">
+                Delete
+                </button>
+
+                <hr>
+
+                `;
+            });
+        }
+        function editRestaurant(index) {
+
+            let restaurant = restaurants[index];
+
+            name.value = restaurant.name;
+
+            cuisine.value = restaurant.cuisine;
+
+            rating.value = restaurant.rating;
+
+            editIndex = index;
+
+        }
+
+        function deleteRestaurant(index) {
+
+            restaurants.splice(index, 1);
+
+            displayRestaurants();
+        }
+
+        displayRestaurants();
+    </script>
+
+
+</body>
+
+</html>

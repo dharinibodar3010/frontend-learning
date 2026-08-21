@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Build a mini Zomato-style feature. -->
+
+    <script>
+
+        function showMenuItem(name, price) {
+
+            let div = document.createElement("div");
+
+            div.style.border = "1px solid gray";
+            div.style.padding = "15px";
+            div.style.margin = "10px";
+            div.style.width = "220px";
+            div.style.borderRadius = "8px";
+            
+            div.innerHTML =
+                "<h2>" + name + "</h2>" +
+                "<h3>₹" + price + "</h3>";
+
+            return div;
+
+        }
+
+        document.body.appendChild(showMenuItem("Pizza", 299));
+        document.body.appendChild(showMenuItem("Burger", 149));
+        document.body.appendChild(showMenuItem("Pasta", 249));
+
+    </script>
+
+</body>
+
+</html>

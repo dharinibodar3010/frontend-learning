@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creator Bio-Stack Builder</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Profile Preview -->
+
+        <section class="profile">
+
+            <div class="avatar">
+                DB
+            </div>
+
+            <h1>Dharini Bodar</h1>
+
+            <p>
+                Frontend Developer | Java Full Stack Developer
+            </p>
+
+        </section>
+
+
+        <!-- Theme Toggle -->
+
+        <div class="theme-section">
+
+            <button id="themeBtn">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+
+        <!-- Add Link Dashboard -->
+
+        <section class="dashboard">
+
+            <h2>Add Social Link</h2>
+
+            <form id="linkForm">
+
+                <input type="text" id="titleInput" placeholder="Link Title">
+
+                <input type="url" id="urlInput" placeholder="https://example.com">
+
+                <button type="submit">
+                    Add Link
+                </button>
+
+            </form>
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+
+        <!-- Link Tree -->
+
+        <section class="link-tree">
+
+            <h2>My Links</h2>
+
+            <div id="linksContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+
+</html>

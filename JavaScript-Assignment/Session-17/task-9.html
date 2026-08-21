@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Add a feature to your cart UI so that when a new product card is added dynamically 
+     (for example, by clicking an 'Add Random Product' button), the 'X' remove functionality 
+     still works without adding any new event listeners. -->
+
+    <button id="addProduct">
+        Add Random Product
+    </button>
+
+    <div id="cart">
+
+    </div>
+
+    <script>
+
+        const cart = document.getElementById("cart");
+
+        document.getElementById("addProduct")
+            .onclick = function () {
+
+                let product = document.createElement("div");
+
+                product.className = "card";
+
+                product.innerHTML =
+                    `
+                    Random Product
+                    <button class="remove">X</button>
+                    `;
+
+                cart.appendChild(product);
+
+            };
+
+        cart.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("remove")) {
+
+                e.target.parentElement.remove();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

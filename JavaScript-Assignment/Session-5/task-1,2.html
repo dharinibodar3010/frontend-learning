@@ -1,0 +1,40 @@
+<!-- Create a function declaration called createSpotifyButton(label, color) 
+ that returns an HTML button element with the given label and background color, 
+ and display it on the page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function createSpotifyButton(label, color) {
+
+            let button = document.createElement("button");
+
+            button.innerHTML = label;
+            button.style.backgroundColor = color;
+            button.style.color = "white";
+            button.style.padding = "10px 20px";
+            button.style.border = "none";
+            button.style.borderRadius = "5px";
+            button.style.cursor = "pointer";
+
+            return button;
+
+        }
+
+        document.body.appendChild(createSpotifyButton("Play Spotify", "#1DB954"));
+
+    </script>
+
+</body>
+
+</html>

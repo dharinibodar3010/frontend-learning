@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Debug this code: It tries to save an array of movie names to localStorage, but after reloading, 
+     the list doesn't display correctly. -->
+
+    <script>
+
+        let movies = [
+
+            "Jawan",
+
+            "Pathaan",
+
+            "Dunki"
+
+        ];
+
+        localStorage.setItem(
+
+            "movies",
+
+            JSON.stringify(movies)
+
+        );
+
+        let saved =
+
+            localStorage.getItem("movies");
+
+        let arr =
+
+            JSON.parse(saved);
+
+        console.log(arr);
+
+    </script>
+</body>
+
+</html>

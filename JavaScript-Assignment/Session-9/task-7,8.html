@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Build a simple web page where users can add their top 3 favorite Zomato restaurants to a list and 
+     save it to localStorage using localStorage.setItem(). When the page reloads, the list should 
+     automatically load from localStorage and display. -->
+
+    <input type="text" id="restaurant" placeholder="Restaurant Name">
+
+    <button onclick="saveRestaurant()"> Add </button>
+
+    <ul id="list"></ul>
+
+    <script>
+
+        let restaurants =
+
+            JSON.parse(localStorage.getItem("restaurants")) || [];
+
+        display();
+
+        function saveRestaurant() {
+
+            let name =
+
+                document.getElementById("restaurant").value;
+
+            if (name != "") {
+
+                restaurants.push(name);
+
+                localStorage.setItem(
+
+                    "restaurants",
+
+                    JSON.stringify(restaurants)
+
+                );
+
+                display();
+
+                document.getElementById("restaurant").value = "";
+
+            }
+
+        }
+
+        function display() {
+
+            let output = "";
+
+            for (let i = 0; i < restaurants.length; i++) {
+
+                output += "<li>" + restaurants[i] + "</li>";
+
+            }
+
+            document.getElementById("list").innerHTML = output;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

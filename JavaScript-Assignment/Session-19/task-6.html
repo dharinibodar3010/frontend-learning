@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Create an HTML file with a Zomato-style 'Add Restaurant' form (name, cuisine, rating), and use 
+     JavaScript to collect the form data and store each entry in an array. -->
+
+    <h2>Add Restaurant</h2>
+
+    <form id="restaurantForm">
+        <input id="rname" placeholder="Restaurant Name"><br><br>
+        <input id="cuisine" placeholder="Cuisine"><br><br>
+        <input id="rating" placeholder="Rating"><br><br>
+        <button type="submit">Add Restaurant</button>
+    </form>
+
+    <script>
+        let restaurants = [];
+
+        let restaurantForm = document.getElementById("restaurantForm");
+        let rname = document.getElementById("rname");
+        let cuisine = document.getElementById("cuisine");
+        let rating = document.getElementById("rating");
+
+        restaurantForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            restaurants.push({
+                name: rname.value,
+                cuisine: cuisine.value,
+                rating: rating.value
+            });
+
+            console.log(restaurants);
+            restaurantForm.reset();
+        });
+    </script>
+</body>
+
+</html>

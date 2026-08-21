@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Use the push() method to add a new playlist object to your playlists array with your favorite genre. 
+     Then, use pop() to remove the last playlist and log the updated array after each operation. -->
+
+    <script>
+
+        let playlists = [
+
+            {
+                name: "Party",
+                genre: "Pop"
+            },
+
+            {
+                name: "Relax",
+                genre: "LoFi"
+            }
+
+        ];
+
+        playlists.push({
+
+            name: "Rock Hits",
+            genre: "Rock"
+
+        });
+
+        console.log("After Push");
+
+        console.log(playlists);
+
+        playlists.pop();
+
+        console.log("After Pop");
+
+        console.log(playlists);
+
+    </script>
+
+</body>
+
+</html>

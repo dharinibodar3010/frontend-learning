@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Given an array of objects called movies, where each object has properties: title, year, and 
+     a nested object rating with keys imdb and rottenTomatoes, write code to print each movie's title 
+     and its IMDb rating. -->
+
+    <script>
+
+        let movies = [
+
+            {
+
+                title: "Pushpa",
+
+                year: 2021,
+
+                rating: {
+
+                    imdb: 8.2,
+
+                    rottenTomatoes: 90
+
+                }
+
+            },
+
+            {
+
+                title: "KGF",
+
+                year: 2022,
+
+                rating: {
+
+                    imdb: 8.5,
+
+                    rottenTomatoes: 94
+
+                }
+
+            }
+
+        ];
+
+        for (let i = 0; i < movies.length; i++) {
+
+            console.log(movies[i].title);
+
+            console.log(movies[i].rating.imdb);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

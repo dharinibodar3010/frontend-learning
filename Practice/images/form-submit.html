@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function display(e) {
+            e.preventDefault();
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var c = a + b;
+            document.getElementById("result").innerHTML = c;
+            return false;
+            
+        }
+    </script>
+</head>
+<body>
+    <form id="result-form">
+        <input type="text" id="a" placeholder="Enter a number">
+        <input type="text" id="b" placeholder="Enter b number">
+        <button onclick="display(event)">Submit</button>
+        
+
+    </form>
+</body>
+</html>

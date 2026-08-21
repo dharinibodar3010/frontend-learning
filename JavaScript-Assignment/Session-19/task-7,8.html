@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Add 'Edit' and 'Delete' buttons next to each playlist in the displayed list, and implement the JavaScript 
+        functions so users can update or remove a playlist from the array and see the changes instantly. -->
+
+    <h2>Spotify Playlist</h2>
+
+    <div id="list"></div>
+
+
+    <script>
+
+        let list = document.getElementById("list");
+
+
+        let playlists = [
+            {
+                name: "Chill Vibes",
+                description: "Relax Songs"
+            },
+            {
+                name: "Workout",
+                description: "Gym Songs"
+            }
+        ];
+
+
+
+        function display() {
+
+
+            list.innerHTML = "";
+
+
+            playlists.forEach((p, index) => {
+
+
+                list.innerHTML += `
+
+        <h3>${p.name}</h3>
+
+        <p>${p.description}</p>
+
+
+        <button onclick="editPlaylist(${index})">
+        Edit
+        </button>
+
+
+        <button onclick="deletePlaylist(${index})">
+        Delete
+        </button>
+
+        <hr>
+
+        `;
+
+            });
+
+        }
+
+        function deletePlaylist(index) {
+
+            playlists.splice(index, 1);
+
+            display();
+
+        }
+
+        function editPlaylist(index) {
+
+            let newName = prompt("Enter Playlist Name");
+
+            let newDesc = prompt("Enter Description");
+
+            playlists[index].name = newName;
+
+            playlists[index].description = newDesc;
+
+            display();
+
+        }
+
+        display();
+
+    </script>
+
+</body>
+
+</html>

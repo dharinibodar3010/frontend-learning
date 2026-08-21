@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Favorite songs list with Remove button using event delegation. -->
+
+    <ul id="songList">
+
+        <li>
+            Believer
+            <button class="remove">Remove</button>
+        </li>
+
+        <li>
+            Shape Of You
+            <button class="remove">Remove</button>
+        </li>
+
+        <li>
+            Perfect
+            <button class="remove">Remove</button>
+        </li>
+
+    </ul>
+
+
+    <script>
+
+        const list = document.getElementById("songList");
+
+
+        list.addEventListener("click", function (e) {
+
+
+            if (e.target.classList.contains("remove")) {
+
+                e.target.parentElement.remove();
+
+            }
+
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

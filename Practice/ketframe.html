@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.2);
+            }
+        }
+
+        .animate-heartbeat {
+            animation: heartbeat 1s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="w-full h-auto ms-auto animate-heartbeat transition-all duration-1000 text-2xl font-bold">Hello, Tailwind CSS!</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Flipkart wishlist. Add product dynamically and remove without adding new listeners. -->
+
+    <button id="add">Add Product</button>
+
+
+    <div id="wishlist">
+
+
+        <div class="product">
+            Mobile
+            <button class="remove">Remove</button>
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+
+        const wishlist = document.getElementById("wishlist");
+
+
+        document.getElementById("add")
+            .addEventListener("click", () => {
+
+
+                let div = document.createElement("div");
+
+                div.className = "product";
+
+                div.innerHTML =
+                    `New Product 
+<button class="remove">Remove</button>`;
+
+
+                wishlist.appendChild(div);
+
+
+            });
+
+
+
+        wishlist.addEventListener("click", (e) => {
+
+
+            if (e.target.classList.contains("remove")) {
+
+                e.target.parentElement.remove();
+
+            }
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

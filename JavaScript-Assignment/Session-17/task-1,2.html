@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Create a list of song cards (each with a title and an 'X' icon) using plain JavaScript and HTML. 
+     When you click the 'X' on any card, remove only that card from the DOM using event delegation 
+     (attach the click listener to the parent container, not each card). -->
+
+    <h2>Spotify Songs</h2>
+
+    <div id="songContainer">
+
+        <div class="song">
+            Kesariya
+            <button class="remove">X</button>
+        </div>
+
+        <br>
+
+        <div class="song">
+            Perfect
+            <button class="remove">X</button>
+        </div>
+
+        <br>
+
+        <div class="song">
+            Believer
+            <button class="remove">X</button>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const container = document.getElementById("songContainer");
+
+
+        container.addEventListener("click", function (event) {
+
+
+            if (event.target.classList.contains("remove")) {
+
+                event.target.parentElement.remove();
+
+            }
+
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

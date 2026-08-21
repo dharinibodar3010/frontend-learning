@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Flipkart shopping cart UI with X icon remove using bubbling. -->
+
+    <div id="cart">
+
+
+        <div class="card">
+            Laptop
+            <button class="remove">X</button>
+        </div>
+
+
+        <div class="card">
+            Mobile
+            <button class="remove">X</button>
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+
+        document.getElementById("cart")
+            .addEventListener("click", function (e) {
+
+
+                if (e.target.classList.contains("remove")) {
+
+                    e.target.closest(".card").remove();
+
+                }
+
+
+            });
+
+
+    </script>
+</body>
+
+</html>

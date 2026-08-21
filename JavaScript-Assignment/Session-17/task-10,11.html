@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Simulate a notification feed like YouTube, where each notification card has a 'Dismiss' button. 
+     When you click 'Dismiss', fade out and remove the card. Make sure the event delegation works for 
+     dynamically loaded notifications as well as those present at page load. -->
+
+    <div id="notifications">
+
+        <div class="notification">
+            New Video Uploaded
+            <button class="dismiss">Dismiss</button>
+        </div>
+
+        <div class="notification">
+            Live Started
+            <button class="dismiss">Dismiss</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        const notifications =
+            document.getElementById("notifications");
+
+        notifications.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("dismiss")) {
+
+                let card = e.target.parentElement;
+
+                card.style.opacity = "0";
+
+                setTimeout(() => {
+
+                    card.remove();
+
+                }, 500);
+
+            }
+
+        });
+
+    </script>
+    
+</body>
+
+</html>
