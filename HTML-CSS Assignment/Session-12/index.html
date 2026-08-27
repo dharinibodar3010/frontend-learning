@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Artist Landing Page</title>
+
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            min-height: 500px;
+            background-color: #212529;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .artist-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+        .playlist-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .social-btn {
+            margin: 5px;
+        }
+
+        footer i {
+            font-size: 25px;
+            margin: 0 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         TASK 4 - Sticky Navbar
+         ========================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+                Music Artist
+            </a>
+
+
+            <!-- Mobile Hamburger -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#home">
+                            Home
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#about">
+                            About
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#contact">
+                            Contact
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ==========================================
+         TASK 1 - Music Artist Landing Page
+         ========================================== -->
+
+    <section id="home" class="hero">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+
+                <!-- Artist Image -->
+
+                <div class="col-md-5 text-center">
+
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f" alt="Music Artist"
+                        class="artist-image">
+
+                </div>
+
+
+                <!-- Artist Information -->
+
+                <div class="col-md-7 text-center text-md-start">
+
+                    <h1 class="display-3 fw-bold">
+                        Alex Music
+                    </h1>
+
+                    <p class="lead">
+                        Singer | Songwriter | Music Artist
+                    </p>
+
+                    <p>
+                        Welcome to my official music page.
+                        I create music that connects people
+                        and brings positive energy.
+                    </p>
+
+
+                    <!-- Social Media Buttons -->
+
+                    <a href="#" class="btn btn-danger social-btn">
+
+                        <i class="bi bi-instagram"></i>
+
+                        Instagram
+
+                    </a>
+
+
+                    <a href="#" class="btn btn-primary social-btn">
+
+                        <i class="bi bi-facebook"></i>
+
+                        Facebook
+
+                    </a>
+
+
+                    <a href="#" class="btn btn-dark social-btn">
+
+                        <i class="bi bi-youtube"></i>
+
+                        YouTube
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         ABOUT SECTION
+         ========================================== -->
+
+    <section id="about" class="py-5 bg-light">
+
+        <div class="container text-center">
+
+            <h2 class="fw-bold">
+                About Me
+            </h2>
+
+            <p class="text-muted">
+
+                I am a passionate music artist who loves
+                creating songs and performing for music lovers.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         TASK 2 - Featured Playlists
+         ========================================== -->
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold mb-4">
+                Featured Playlists
+            </h2>
+
+
+            <div class="row g-4">
+
+
+                <!-- Playlist 1 -->
+
+                <div class="col-12 col-md-4">
+
+                    <div class="card playlist-card h-100">
+
+                        <img src="https://placehold.co/500x300?text=Chill+Vibes" class="card-img-top" alt="Chill Vibes">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Chill Vibes
+                            </h5>
+
+                            <p class="card-text">
+                                Relaxing songs for your peaceful moments.
+                            </p>
+
+                            <button class="btn btn-success">
+                                Listen Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Playlist 2 -->
+
+                <div class="col-12 col-md-4">
+
+                    <div class="card playlist-card h-100">
+
+                        <img src="https://placehold.co/500x300?text=Workout+Hits" class="card-img-top"
+                            alt="Workout Hits">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Workout Hits
+                            </h5>
+
+                            <p class="card-text">
+                                Energetic songs to boost your workout.
+                            </p>
+
+                            <button class="btn btn-success">
+                                Listen Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Playlist 3 -->
+
+                <div class="col-12 col-md-4">
+
+                    <div class="card playlist-card h-100">
+
+                        <img src="https://placehold.co/500x300?text=Love+Songs" class="card-img-top" alt="Love Songs">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Love Songs
+                            </h5>
+
+                            <p class="card-text">
+                                Beautiful romantic songs for every mood.
+                            </p>
+
+                            <button class="btn btn-success">
+                                Listen Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         TASK 3 - Flipkart Style Products
+         ========================================== -->
+
+    <section class="py-5 bg-light">
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold mb-4">
+                Featured Products
+            </h2>
+
+
+            <div class="row g-4">
+
+
+                <!-- Product 1 -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card h-100">
+
+                        <img src="https://placehold.co/400x300?text=Headphones" class="card-img-top" alt="Headphones">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Headphones
+                            </h5>
+
+                            <p class="text-success fw-bold">
+                                ₹1,999
+                            </p>
+
+                            <button class="btn btn-primary">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Product 2 -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card h-100">
+
+                        <img src="https://placehold.co/400x300?text=Smartphone" class="card-img-top" alt="Smartphone">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Smartphone
+                            </h5>
+
+                            <p class="text-success fw-bold">
+                                ₹15,999
+                            </p>
+
+                            <button class="btn btn-primary">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Product 3 -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card h-100">
+
+                        <img src="https://placehold.co/400x300?text=Smart+Watch" class="card-img-top" alt="Smart Watch">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Smart Watch
+                            </h5>
+
+                            <p class="text-success fw-bold">
+                                ₹2,999
+                            </p>
+
+                            <button class="btn btn-primary">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Product 4 -->
+
+                <div class="col-6 col-md-3">
+
+                    <div class="card product-card h-100">
+
+                        <img src="https://placehold.co/400x300?text=Speaker" class="card-img-top"
+                            alt="Bluetooth Speaker">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Bluetooth Speaker
+                            </h5>
+
+                            <p class="text-success fw-bold">
+                                ₹2,499
+                            </p>
+
+                            <button class="btn btn-primary">
+                                Buy Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         TASK 5 - Footer
+         ========================================== -->
+
+    <footer id="contact" class="bg-dark text-light text-center py-4">
+
+        <div class="container">
+
+            <h4>
+                Connect With Me
+            </h4>
+
+
+            <!-- Instagram Style Icons -->
+
+            <div class="my-3">
+
+                <a href="#" class="text-light">
+
+                    <i class="bi bi-instagram"></i>
+
+                </a>
+
+
+                <a href="#" class="text-light">
+
+                    <i class="bi bi-facebook"></i>
+
+                </a>
+
+
+                <a href="#" class="text-light">
+
+                    <i class="bi bi-youtube"></i>
+
+                </a>
+
+
+                <a href="#" class="text-light">
+
+                    <i class="bi bi-twitter-x"></i>
+
+                </a>
+
+            </div>
+
+
+            <p class="mb-0">
+
+                &copy; 2026 Alex Music. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+</body>
+
+</html>

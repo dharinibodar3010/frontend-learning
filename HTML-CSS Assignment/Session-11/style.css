@@ -1,0 +1,27 @@
+/* ==========================================
+   TASK 4
+   Override Bootstrap Primary Button
+   ========================================== */
+
+.btn-primary {
+
+    background-color: #e23744;
+
+    border-color: #e23744;
+
+    color: white;
+
+}
+
+
+/* Hover Effect */
+
+.btn-primary:hover {
+
+    background-color: #b91c2a;
+
+    border-color: #b91c2a;
+
+    color: white;
+
+}

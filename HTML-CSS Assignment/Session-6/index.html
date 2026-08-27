@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Position and Display Tasks</title>
+
+
+    <style>
+        /* =========================================
+           TASK 1 - Zomato Style Restaurant Card
+           ========================================= */
+
+        .restaurant-card {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #e23744;
+            border-radius: 10px;
+        }
+
+        .restaurant-card h2 {
+            margin: 0 0 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid gray;
+        }
+
+        .restaurant-card p {
+            margin: 10px 0;
+            padding: 8px;
+            border-bottom: 1px solid lightgray;
+        }
+
+
+        /* =========================================
+           TASK 2 - Flipkart Style Product Tile
+           ========================================= */
+
+        .product-tile {
+            width: 250px;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid gray;
+        }
+
+        .product-tile img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-name {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            color: green;
+        }
+
+        /* 
+           When hide-price class is added,
+           price will disappear.
+        */
+
+        .hide-price {
+            display: none;
+        }
+
+
+        /* =========================================
+           TASK 3 - WhatsApp Fixed Badge
+           ========================================= */
+
+        .whatsapp-badge {
+
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            margin: 10px;
+            padding: 12px 18px;
+
+            background-color: #25D366;
+
+            color: white;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            box-shadow: 0 3px 10px gray;
+
+        }
+
+
+        /* =========================================
+           TASK 4 - BookMyShow Movie Poster Grid
+           ========================================= */
+
+        .movie-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 180px);
+
+            gap: 20px;
+
+            margin: 30px;
+
+        }
+
+        .movie-poster {
+
+            position: relative;
+
+        }
+
+        .movie-poster img {
+
+            width: 180px;
+
+            height: 250px;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+        .new-badge {
+
+            position: absolute;
+
+            top: 10px;
+
+            left: 10px;
+
+            padding: 5px 10px;
+
+            background-color: red;
+
+            color: white;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+
+        }
+
+
+        /* =========================================
+           TASK 5 - Reusable CSS Class
+           ========================================= */
+
+        /*
+           Reusable class is used for common
+           margin and padding.
+
+           This improves maintainability because
+           we don't need to write the same
+           margin and padding again and again.
+        */
+
+        .common-spacing {
+
+            margin: 20px;
+
+            padding: 15px;
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TASK 1
+         ========================================= -->
+
+    <h1>Restaurant Card</h1>
+
+
+    <div class="restaurant-card common-spacing">
+
+        <h2>Food Palace</h2>
+
+        <p>
+            Cuisine: Gujarati, Punjabi, North Indian
+        </p>
+
+        <p>
+            ⭐ Rating: 4.5/5
+        </p>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- =========================================
+         TASK 2
+         ========================================= -->
+
+    <h1>Product Tile</h1>
+
+
+    <div class="product-tile">
+
+        <!-- Online Product Image -->
+
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Wireless Headphones">
+
+
+        <span class="product-name">
+
+            Wireless Headphones
+
+        </span>
+
+
+        <!-- Product Price -->
+
+        <span class="product-price">
+
+            ₹1,999
+
+        </span>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- =========================================
+         TASK 3
+         ========================================= -->
+
+    <div class="whatsapp-badge">
+
+        💬 Chat on WhatsApp
+
+    </div>
+
+
+    <!-- =========================================
+         TASK 4
+         ========================================= -->
+
+    <h1>Movie Posters</h1>
+
+
+    <div class="movie-grid">
+
+
+        <!-- Movie Poster 1 -->
+
+        <div class="movie-poster">
+
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba" alt="Movie Poster">
+
+            <span class="new-badge">
+
+                New
+
+            </span>
+
+        </div>
+
+
+        <!-- Movie Poster 2 -->
+
+        <div class="movie-poster">
+
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c" alt="Movie Poster">
+
+        </div>
+
+
+        <!-- Movie Poster 3 -->
+
+        <div class="movie-poster">
+
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728" alt="Movie Poster">
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
