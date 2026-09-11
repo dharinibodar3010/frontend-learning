@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Task 4: Virtual DOM
+
+React uses a Virtual DOM to update the UI efficiently.
+
+It compares the new Virtual DOM with the previous Virtual DOM.
+
+Then, it updates only the changed parts in the real DOM.
+
+This makes UI updates faster than updating the entire DOM.
